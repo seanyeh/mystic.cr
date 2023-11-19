@@ -1,0 +1,13 @@
+name: mystic.cr
+version: 0.1.0
+
+authors:
+  - Sean Yeh <109418+seanyeh@users.noreply.github.com>
+
+development_dependencies:
+  ameba:
+    github: crystal-ameba/ameba
+
+crystal: '>= 1.10.1'
+
+license: MIT
