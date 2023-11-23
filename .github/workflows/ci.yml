@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "0 6 * * 1"
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        crystal:
+          - latest
+          - nightly
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - uses: crystal-lang/install-crystal@v1
+      with:
+        crystal: ${{ matrix.crystal }}
+
+    - name: Install dependencies
+      run: shards install --ignore-crystal-version
+
+    - name: Format
+      run: crystal tool format --check
+
+    - name: Run tests
+      run: crystal spec -v --error-trace
+
+    - name: Lint
+      run: ./bin/ameba
