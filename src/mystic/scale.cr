@@ -7,15 +7,15 @@ class Mystic::Scale
   private HS = Interval.new("m2")
 
   SCALE_INTERVALS = {
-    major: [WS, WS, HS, WS, WS, WS],
-    minor: [WS, HS, WS, WS, HS, WS],
+    major:           [WS, WS, HS, WS, WS, WS],
+    minor:           [WS, HS, WS, WS, HS, WS],
     "melodic minor": [WS, HS, WS, WS, WS, WS],
   }
 
   SCALE_ALIASES = {
-    ionian: "major",
-    aeolian: "minor",
-    "natural minor": "minor"
+    ionian:          "major",
+    aeolian:         "minor",
+    "natural minor": "minor",
   }
 
   def initialize(@tonic, @type, @intervals)

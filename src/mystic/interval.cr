@@ -136,9 +136,9 @@ class Mystic::Interval
 
     new_quality =
       case quality
-      when "P" then "P"
-      when "m" then "M"
-      when "M" then "m"
+      when "P"             then "P"
+      when "m"             then "M"
+      when "M"             then "m"
       when .includes?("A") then "d" * quality.size
       when .includes?("d") then "A" * quality.size
       else
