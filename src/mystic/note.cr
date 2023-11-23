@@ -148,6 +148,10 @@ class Mystic::Note
     Note.from_coords(coords - interval.coords)
   end
 
+  def -(other : Note)
+    Interval.from_coords(coords - other.coords)
+  end
+
   def ==(other : Note)
     letter == other.letter && accidental == other.accidental && octave == other.octave
   end

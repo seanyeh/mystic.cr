@@ -178,7 +178,7 @@ module Mystic
       end
     end
 
-    describe "#-" do
+    describe "#- (interval)" do
       it "returns the resulting note from subtracting an ascending interval" do
         i = Interval.new("A3")
 
@@ -189,6 +189,22 @@ module Mystic
         i = Interval.new("m-3")
 
         (natural_note - i).should eq(Note.new("Eb4"))
+      end
+    end
+
+    describe "#- (note)" do
+      it "returns the correct interval between the 2 notes" do
+        n1 = Note.new("C#3")
+        n2 = Note.new("C2")
+
+        (n1 - n2).should eq(Interval.new("A8"))
+      end
+
+      it "returns the correct interval between the 2 notes when the other note is higher" do
+        n1 = Note.new("C#3")
+        n2 = Note.new("C4")
+
+        (n1 - n2).should eq(Interval.new("d-8"))
       end
     end
 
