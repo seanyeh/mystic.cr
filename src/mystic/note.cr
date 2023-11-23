@@ -152,6 +152,24 @@ class Mystic::Note
     Interval.from_coords(coords - other.coords)
   end
 
+  # Note: this compares notes as ordered on a staff rather than by pitch.
+  # For example, a Cx4 < Db4 even though Cx4 sounds higher.
+  def <=>(other : Note)
+    return octave.<=>(other.octave) if octave != other.octave
+
+    return LETTER_PITCH_CLASSES[letter].<=>(LETTER_PITCH_CLASSES[other.letter]) if letter != other.letter
+
+    accidental_offset.<=>(other.accidental_offset)
+  end
+
+  def <(other : Note)
+    self.<=>(other) == -1
+  end
+
+  def >(other : Note)
+    self.<=>(other) == 1
+  end
+
   def ==(other : Note)
     letter == other.letter && accidental == other.accidental && octave == other.octave
   end

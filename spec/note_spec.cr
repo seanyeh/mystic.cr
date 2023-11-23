@@ -208,6 +208,62 @@ module Mystic
       end
     end
 
+    describe "#<=>" do
+      it "returns the correct result for notes in different octaves" do
+        n1 = Note.new("C3")
+        n2 = Note.new("D2")
+
+        (n1.<=>(n2)).should eq(1)
+      end
+
+      it "returns the correct result for notes in the same octave" do
+        n1 = Note.new("Cx3")
+        n2 = Note.new("Dbb3")
+
+        (n1.<=>(n2)).should eq(-1)
+      end
+
+      it "returns the correct result for notes with the same letter and octave" do
+        n1 = Note.new("Cx3")
+        n2 = Note.new("Cb3")
+
+        (n1.<=>(n2)).should eq(1)
+      end
+
+      it "returns the correct result for the same note" do
+        n1 = Note.new("Cx3")
+        n2 = Note.new("Cx3")
+
+        (n1.<=>(n2)).should eq(0)
+      end
+    end
+
+    describe "#<" do
+      n1 = Note.new("C#3")
+      n2 = Note.new("Db3")
+
+      it "returns true if lower" do
+        (n1 < n2).should be_true
+      end
+
+      it "returns false if higher" do
+        (n2 < n1).should be_false
+      end
+    end
+
+    describe "#>" do
+      n1 = Note.new("C#3")
+      n2 = Note.new("Db3")
+
+      it "returns false if lower" do
+        (n1 > n2).should be_false
+      end
+
+      it "returns true if higher" do
+        (n2 > n1).should be_true
+      end
+    end
+
     describe "#==" do
       it "returns true if same" do
         n1 = Note.new("C#3")
