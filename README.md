@@ -1,5 +1,7 @@
 # mystic.cr
 
+![CI](https://github.com/seanyeh/mystic.cr/actions/workflows/ci.yml/badge.svg)
+
 Mystic is a music theory library for Crystal, featuring methods for working with notes, intervals, scales, and more.
 
 ## Installation
