@@ -177,6 +177,23 @@ class Mystic::Interval
     note + self
   end
 
+  # Note: this compares intervals as ordered on a staff rather than by pitch.
+  # For example, an A2 < d3 even though an A2 spans more semitones
+  # Also note: this compares magnitude only, so direction is not taken into account
+  def <=>(other : Interval)
+    return number.<=>(other.number) if number != other.number
+
+    quality_offset.<=>(other.quality_offset)
+  end
+
+  def <(other : Interval)
+    self.<=>(other) == -1
+  end
+
+  def >(other : Interval)
+    self.<=>(other) == 1
+  end
+
   def ==(other : Interval)
     quality == other.quality && value == other.value
   end

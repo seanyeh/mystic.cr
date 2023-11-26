@@ -280,6 +280,76 @@ module Mystic
       end
     end
 
+    describe "#<=>" do
+      it "returns the correct result when greater" do
+        i1 = Interval.new("d3")
+        i2 = Interval.new("A2")
+
+        (i1.<=>(i2)).should eq(1)
+      end
+
+      it "returns the correct result when less" do
+        i1 = Interval.new("A2")
+        i2 = Interval.new("d3")
+
+        (i1.<=>(i2)).should eq(-1)
+      end
+
+      it "returns the correct result when value is the same" do
+        i1 = Interval.new("A2")
+        i2 = Interval.new("d3")
+
+        (i1.<=>(i2)).should eq(-1)
+      end
+
+      it "returns the correct result when value is the same but quality differs" do
+        i1 = Interval.new("d3")
+        i2 = Interval.new("m3")
+
+        (i1.<=>(i2)).should eq(-1)
+      end
+
+      it "returns the correct result for the same" do
+        i1 = Interval.new("A2")
+        i2 = Interval.new("A2")
+
+        (i1.<=>(i2)).should eq(0)
+      end
+
+      it "returns the correct result for the same but opposite direction" do
+        i1 = Interval.new("A2")
+        i2 = Interval.new("A-2")
+
+        (i1.<=>(i2)).should eq(0)
+      end
+    end
+
+    describe "#<" do
+      i1 = Interval.new("A2")
+      i2 = Interval.new("m3")
+
+      it "returns true if lower" do
+        (i1 < i2).should be_true
+      end
+
+      it "returns false if higher" do
+        (i2 < i1).should be_false
+      end
+    end
+
+    describe "#>" do
+      i1 = Interval.new("A2")
+      i2 = Interval.new("m3")
+
+      it "returns false if lower" do
+        (i1 > i2).should be_false
+      end
+
+      it "returns true if higher" do
+        (i2 > i1).should be_true
+      end
+    end
+
     describe "#==" do
       it "returns true if same" do
         i1 = Interval.new("M3")
