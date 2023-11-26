@@ -2,7 +2,6 @@ class Mystic::Interval
   getter quality : String
   getter value : Int32
 
-  PERFECT_INTERVALS        = [1, 4, 5, 8]
   BASE_SEMITONES           = [0, 2, 3, 5, 7, 8, 10]
   QUALITY_SEMITONE_OFFSETS = {
     P: 0,
@@ -60,28 +59,18 @@ class Mystic::Interval
 
     # Check if perfect interval
     simple_value = (value.abs % 7) + 1
-    is_perfect = PERFECT_INTERVALS.includes?(simple_value)
+    is_perfect = Util.perfect?(simple_value)
 
     # Use increasing alteration if:
     # 1) ascending fifths (sharps) and ascending interval, or
     # 2) descending fifths (flats) and descending interval
     alteration_increasing = direction.positive? == fifths.positive?
 
-    quality = begin
-      if alteration_increasing
-        case alterations
-        when 0
-          is_perfect ? "P" : "M"
-        else "A" * alterations
-        end
-      else
-        case alterations
-        when 0
-          is_perfect ? "P" : "m"
-        else "d" * alterations
-        end
-      end
-    end
+    # For imperfect intervals, increase by 1 since we consider m/M as a -1/1 offset
+    alterations += 1 if !is_perfect
+    offset = alteration_increasing ? alterations : -1 * alterations
+
+    quality = Util.offset_to_quality(offset, is_perfect: is_perfect)
 
     Interval.new(quality, value + direction)
   end
@@ -151,7 +140,7 @@ class Mystic::Interval
   def quality_offset
     # If augmented and imperfect interval (e.g. A6),
     # raise 2 semitones above base (since we use minor as a base)
-    number_perfect = PERFECT_INTERVALS.includes?(simple.number)
+    number_perfect = Util.perfect?(simple.number)
     augmented_imperfect_offset = !number_perfect && quality.includes?("A") ? 1 : 0
 
     augmented_imperfect_offset + quality.chars.sum { |c| QUALITY_SEMITONE_OFFSETS[c.to_s] }
