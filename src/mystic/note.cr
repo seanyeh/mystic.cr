@@ -40,6 +40,8 @@ class Mystic::Note
     B: Coords.new(-2, 5),
   }
 
+  NAME_PATTERN = "(?<letter>[abcdefgABCDEFG])(?<accidental>[b♭𝄫]+|[#♯x𝄪]*)"
+
   protected def initialize(@letter, @accidental, @octave)
     @letter = @letter.upcase
 
@@ -49,20 +51,14 @@ class Mystic::Note
   end
 
   def initialize(s : String)
-    pattern = (
-      "^" \
-      "([abcdefgABCDEFG])" \
-      "([#♯x𝄪]*|[b♭𝄫]+)" \
-      "(\\d+)?" \
-      "$"
-    )
-    match = %r{#{pattern}}.match(s)
+    pattern = "^#{NAME_PATTERN}(?<octave>\\d+)?$"
+    match = Regex.new(pattern).match(s)
 
     raise Error.new("Invalid note name: #{s}") unless match
 
-    letter = match[1].upcase
-    accidental = match[2]
-    octave = match[3]?.try &.to_i || BASE_OCTAVE
+    letter = match["letter"].upcase
+    accidental = match["accidental"]
+    octave = match["octave"]?.try(&.to_i) || BASE_OCTAVE
     initialize(letter, accidental, octave)
   end
 
