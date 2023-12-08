@@ -38,7 +38,7 @@ class Mystic::Interval
     )
     match = %r{#{pattern}}.match(s)
 
-    raise Error.new("Invalid interval format") unless match
+    raise Error.new("Invalid interval format: #{s}") unless match
 
     quality = match[1]
     value = match[2].to_i
