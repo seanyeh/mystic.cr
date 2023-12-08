@@ -1,0 +1,4 @@
+Metrics/CyclomaticComplexity:
+  Enabled: false
+Style/ParenthesesAroundCondition:
+  Enabled: false
