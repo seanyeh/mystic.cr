@@ -31,8 +31,7 @@ module Mystic
         ["Cm7", ["m3", "P5", "m7"]],
         ["Cdim7", ["m3", "d5", "d7"]],
         ["C+7", ["M3", "A5", "M7"]],
-
-        # TODO: Be able to parse chords with altered 5ths labeled after 7th, e.g. C7+5
+        ["C7+5", ["M3", "A5", "m7"]],
       ])
     end
 

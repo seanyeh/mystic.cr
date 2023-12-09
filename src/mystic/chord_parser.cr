@@ -15,6 +15,11 @@ class Mystic::ChordParser
     "13": [7, 9, 11],
   }
 
+  ACCIDENTAL_ALIASES = {
+    "+": "#",
+    "-": "b",
+  }
+
   struct Token
     property member, accidental, type
 
@@ -127,7 +132,7 @@ class Mystic::ChordParser
       next if !token.member?
 
       member = token.member
-      accidental = token.accidental
+      accidental = ACCIDENTAL_ALIASES.fetch(token.accidental, token.accidental)
 
       quality = ChordParser.accidentals_to_quality(member, accidental)
       Interval.new("#{quality}#{member}")
@@ -137,7 +142,7 @@ class Mystic::ChordParser
   def self.tokenize_extensions(s : String)
     tokens = [] of Token
 
-    pattern = "^(?<prefix>add|no|omit)?(?<accidental>[#♯x𝄪]*|[b♭𝄫]+)(?<member>[245-9]|1[0-4])|^(?<sus>sus)(?<sus_member>[24]?)"
+    pattern = "^(?<prefix>add|no|omit)?(?<accidental>[#♯x𝄪]*|[b♭𝄫]+|[+-])(?<member>[245-9]|1[0-4])|^(?<sus>sus)(?<sus_member>[24]?)"
 
     current = s.dup
     while !current.empty?
