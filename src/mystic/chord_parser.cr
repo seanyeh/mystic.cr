@@ -186,7 +186,7 @@ class Mystic::ChordParser
 
     is_perfect = Util.perfect?(member)
 
-    accidental_offset = Note.accidental_offset(accidental)
+    accidental_offset = Util.accidental_offset(accidental)
     Util.offset_to_quality(accidental_offset, is_perfect: is_perfect)
   end
 end

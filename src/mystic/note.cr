@@ -3,18 +3,6 @@ class Mystic::Note
   getter accidental : String
   getter octave : Int32
 
-  ACCIDENTAL_OFFSETS = {
-    "#": 1,
-    "x": 2,
-    "b": -1,
-
-    # Accept some unicode characters
-    "♯": 1,
-    "♭": -1,
-    "𝄫": -2,
-    "𝄪": 2,
-  }
-
   PITCHES     = ["C", "D", "E", "F", "G", "A", "B"]
   ALL_PITCHES = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
 
@@ -46,8 +34,8 @@ class Mystic::Note
     @letter = @letter.upcase
 
     # Normalize accidentals to a standard format
-    accidental_offset = Note.accidental_offset(@accidental)
-    @accidental = Note.normalize_accidental(accidental_offset)
+    accidental_offset = Util.accidental_offset(@accidental)
+    @accidental = Util.normalize_accidental(accidental_offset)
   end
 
   def initialize(s : String)
@@ -88,27 +76,12 @@ class Mystic::Note
       end
     end
 
-    accidental = Note.normalize_accidental(accidental_offset)
+    accidental = Util.normalize_accidental(accidental_offset)
 
     Note.new(letter, accidental, octave)
   end
 
-  protected def self.normalize_accidental(accidental_offset)
-    case accidental_offset
-    when .negative? then "b" * accidental_offset.abs
-    when 1          then "#"
-    when 2          then "x"
-    when 3          then "#x"
-    else
-      # No standard way to denote > 3 sharps
-      "#" * accidental_offset
-    end
-  end
-
-  protected def self.accidental_offset(accidental)
-    accidental.chars.sum { |c| ACCIDENTAL_OFFSETS.fetch(c.to_s, 0) }
-  end
-
+  # Returns `Coords` representation
   def coords
     octave_offset = Coords.new(octave - BASE_OCTAVE, 0)
 
@@ -133,7 +106,7 @@ class Mystic::Note
   end
 
   def accidental_offset
-    Note.accidental_offset(accidental)
+    Util.accidental_offset(accidental)
   end
 
   def +(interval : Interval)

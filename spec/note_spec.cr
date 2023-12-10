@@ -84,24 +84,6 @@ module Mystic
       end
     end
 
-    describe ".accidental_offset" do
-      it "returns the correct offset with multiple sharps" do
-        Note.accidental_offset("#####").should eq(5)
-      end
-
-      it "returns the correct offset with triple sharp" do
-        Note.accidental_offset("#x").should eq(3)
-      end
-
-      it "returns the correct offset with flats" do
-        Note.accidental_offset("bbb").should eq(-3)
-      end
-
-      it "returns the correct offset with unicode accidentals" do
-        Note.accidental_offset("♭").should eq(-1)
-      end
-    end
-
     describe "#coords" do
       it "returns the correct coords for a note without accidentals" do
         natural_note.coords.should eq(Coords.new(0, 0))
