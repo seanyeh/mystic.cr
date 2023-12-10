@@ -1,3 +1,4 @@
+# Parser for chord symbols
 class Mystic::ChordParser
   # Default accidentals for imperfect intervals
   DEFAULT_ACCIDENTALS = {
@@ -36,6 +37,7 @@ class Mystic::ChordParser
     end
   end
 
+  # Return a standardized format for qualities for a given string quality
   def self.normalize_basic_quality(s : String)
     if s.downcase.in?(["maj", "ma"])
       "M"
@@ -46,6 +48,7 @@ class Mystic::ChordParser
     end
   end
 
+  # Parse a string chord symbol and return the resulting `Chord`
   def self.parse(s : String)
     pattern = (
       "^" \
@@ -112,6 +115,10 @@ class Mystic::ChordParser
     Chord.new(root, intervals: intervals)
   end
 
+  # Uses the given *tokens* and returns a list of extended intervals (beyond the 3rd/5th)
+  #
+  # When *has_seventh* is true, the chord symbol has an explicit 7th,
+  # so there is no need to add an implied 7th
   def self.parse_extensions(tokens : Array(Token), has_seventh = false)
     # Add implied members
     max_extension = tokens.compact_map do |token|
@@ -139,6 +146,7 @@ class Mystic::ChordParser
     end.sort!
   end
 
+  # Splits the given string into tokens
   def self.tokenize_extensions(s : String)
     tokens = [] of Token
 

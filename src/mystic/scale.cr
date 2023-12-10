@@ -1,3 +1,14 @@
+# Represents a scale
+# A scale consists of a tonic note, type, and array of `Interval`s.
+#
+# To create a scale:
+# ```
+# # C major scale
+# Scale.new(Note.new("C"), "major")
+
+# # Can create a custom scale by supplying the intervals
+# Scale.new(Note.new("C"), "my custom scale", [Interval.new("M2"), Interval.new("M3")])
+# ```
 class Mystic::Scale
   getter tonic : Note
   getter type : String
@@ -39,6 +50,7 @@ class Mystic::Scale
     initialize(Note.new(tonic_type), type)
   end
 
+  # Returns the notes of the scale
   def notes
     intervals.reduce([tonic]) do |acc, interval|
       new_note = acc.last + interval
@@ -46,6 +58,9 @@ class Mystic::Scale
     end
   end
 
+  # Returns the name of the scale
+  # For example: "C major"
+  # If *include_octave* is true, will include the octave as part of the tonic note (e.g. "C4 major")
   def name(include_octave = false)
     "#{include_octave ? tonic : tonic.letter} #{type}"
   end

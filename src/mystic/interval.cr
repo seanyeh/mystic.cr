@@ -1,3 +1,17 @@
+# Represents an interval
+#
+# To create an Interval:
+# ```
+# # Ascending Major 3rd
+# Interval.new("M3")
+#
+# # Descending intervals have a negative value
+# # Descending Perfect 5th
+# Interval.new("P-5")
+# ```
+# Available qualities are:
+# M (major), m (minor), P (perfect), d (diminished), A (augmented).
+# Going further is also possible, for example dd (doubly diminished) and AAA (triply augmented)
 class Mystic::Interval
   getter quality : String
   getter value : Int32
@@ -75,6 +89,7 @@ class Mystic::Interval
     Interval.new(quality, value + direction)
   end
 
+  # Returns `Coords` representation
   def coords
     octave_offset = Coords.new(octaves, 0)
 
@@ -82,18 +97,22 @@ class Mystic::Interval
     (base_coords + (SHARP_COORDS * quality_offset) + octave_offset) * direction
   end
 
+  # Returns the (positive) number
   def number
     value.abs
   end
 
+  # Returns 1 if ascending and -1 if descending
   def direction
     value >= 0 ? 1 : -1
   end
 
+  # Returns if simple (an octave or smaller)
   def simple?
     number <= 8
   end
 
+  # Returns if compound (greater than an octave)
   def compound?
     !simple?
   end
@@ -104,6 +123,7 @@ class Mystic::Interval
     (number - 2).tdiv(7)
   end
 
+  # Returns the simple form
   def simple
     return self if simple?
 
@@ -116,10 +136,13 @@ class Mystic::Interval
     Interval.new(quality, simple_value)
   end
 
+  # Returns the same interval goimg in the opposite direction
   def reverse
     Interval.new(quality, -1 * value)
   end
 
+  # Returns the inversion
+  # If compound, returns the inversion of the simple form
   def invert
     new_value = 9 - simple.number
 
@@ -137,6 +160,7 @@ class Mystic::Interval
     Interval.new(new_quality, direction * new_value)
   end
 
+  # Returns the accidental offset based on the quality
   def quality_offset
     # If augmented and imperfect interval (e.g. A6),
     # raise 2 semitones above base (since we use minor as a base)
@@ -146,6 +170,7 @@ class Mystic::Interval
     augmented_imperfect_offset + quality.chars.sum { |c| QUALITY_SEMITONE_OFFSETS[c.to_s] }
   end
 
+  # Returns the number of semitones the interval spans
   def semitones
     base_semitone = BASE_SEMITONES[simple.number - 1]
 

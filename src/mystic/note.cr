@@ -1,3 +1,23 @@
+# Represents a note, consisting of a note name (letter and accidental) and octave
+#
+# To create a Note:
+
+# ```
+# # Middle C
+# Note.new("C4")
+
+# # Middle C. Octave defaults to 4 if not provided
+# Note.new("C")
+
+# # Middle C
+# # In the case of accidentals, will default to using sharps.
+# Note.from_midi(60)
+
+# # The A above middle C
+# # This is used internally and may be less useful for most end users.
+# # See `Coords` for more information on Coordinate representation of pitches
+# Note.from_coords(Coords.new(-1, 3))
+# ```
 class Mystic::Note
   getter letter : String
   getter accidental : String
@@ -28,6 +48,7 @@ class Mystic::Note
     B: Coords.new(-2, 5),
   }
 
+  # Regex pattern for a note name
   NAME_PATTERN = "(?<letter>[abcdefgABCDEFG])(?<accidental>[b♭𝄫]+|[#♯x𝄪]*)"
 
   protected def initialize(@letter, @accidental, @octave)
@@ -38,6 +59,7 @@ class Mystic::Note
     @accidental = Util.normalize_accidental(accidental_offset)
   end
 
+  # Returns a note corresponding to a given string representation
   def initialize(s : String)
     pattern = "^#{NAME_PATTERN}(?<octave>\\d+)?$"
     match = Regex.new(pattern).match(s)
@@ -50,6 +72,7 @@ class Mystic::Note
     initialize(letter, accidental, octave)
   end
 
+  # Returns a note corresponding to a given midi value
   def self.from_midi(i : Int32)
     octave = i.tdiv(12) - 1
     pitch_class = i % 12
@@ -57,6 +80,7 @@ class Mystic::Note
     Note.new("#{ALL_PITCHES[pitch_class]}#{octave}")
   end
 
+  # Returns a note corresponding to a given `Coords`
   def self.from_coords(coords : Coords)
     fifths, value = coords.fifths, coords.value
 
@@ -93,14 +117,17 @@ class Mystic::Note
     "#{letter}#{accidental}"
   end
 
+  # Returns the numerical pitch class (0-11)
   def chroma
     (LETTER_PITCH_CLASSES[letter] + accidental_offset) % 12
   end
 
+  # Returns the midi value
   def midi
     (12 * (octave + 1)) + chroma
   end
 
+  # Returns the frequency in Hz
   def frequency(tuning = 440.0)
     tuning * Math.exp2((midi - 69) / 12)
   end
