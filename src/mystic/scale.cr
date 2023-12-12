@@ -10,6 +10,11 @@ class Mystic::Scale
     major:           [WS, WS, HS, WS, WS, WS],
     minor:           [WS, HS, WS, WS, HS, WS],
     "melodic minor": [WS, HS, WS, WS, WS, WS],
+    dorian:          [WS, HS, WS, WS, WS, HS, WS],
+    phrygian:        [HS, WS, WS, WS, HS, WS, WS],
+    lydian:          [WS, WS, WS, HS, WS, WS, HS],
+    mixolydian:      [WS, WS, HS, WS, WS, HS, WS],
+    locrian:         [HS, WS, WS, HS, WS, WS, WS],
   }
 
   SCALE_ALIASES = {
