@@ -33,6 +33,14 @@ module Mystic
       end
 
       it "returns the correct chord when given notes" do
+        c = Chord.new(custom_notes)
+
+        c.root.should eq(root)
+        c.intervals.should eq(custom_intervals)
+        c.notes.should eq(custom_notes)
+      end
+
+      it "returns the correct chord when given a root and notes" do
         c = Chord.new(root, notes: custom_notes)
 
         c.root.should eq(root)

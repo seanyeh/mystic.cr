@@ -34,6 +34,11 @@ class Mystic::Chord
     @notes = (notes || [root] + intervals.map { |interval| root + interval }).sort
   end
 
+  def initialize(notes : Array(Note))
+    notes = notes.sort
+    initialize(notes.first, notes)
+  end
+
   def initialize(@root, @notes : Array(Note))
     # TODO: improve algorithm - adjust octave of notes to be closest to (but higher than) root
     @intervals = notes.sort.compact_map { |n| n.name == root.name ? nil : n - root }
