@@ -27,7 +27,7 @@ class Mystic::Scale
   end
 
   def initialize(@tonic, @type)
-    key = SCALE_ALIASES[type]? || type
+    key = SCALE_ALIASES.fetch(type, type)
     intervals = SCALE_INTERVALS[key]?
 
     raise Error.new("Invalid scale type: #{type}") if intervals.nil?
