@@ -1,18 +1,18 @@
 # Represents a note, consisting of a note name (letter and accidental) and octave
 #
 # To create a Note:
-
+#
 # ```
 # # Middle C
 # Note.new("C4")
-
+#
 # # Middle C. Octave defaults to 4 if not provided
 # Note.new("C")
-
+#
 # # Middle C
 # # In the case of accidentals, will default to using sharps.
 # Note.from_midi(60)
-
+#
 # # The A above middle C
 # # This is used internally and may be less useful for most end users.
 # # See `Coords` for more information on Coordinate representation of pitches
@@ -149,6 +149,7 @@ class Mystic::Note
   end
 
   # Note: this compares notes as ordered on a staff rather than by pitch.
+  #
   # For example, a Cx4 < Db4 even though Cx4 sounds higher.
   def <=>(other : Note)
     return octave.<=>(other.octave) if octave != other.octave

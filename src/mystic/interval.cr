@@ -136,7 +136,7 @@ class Mystic::Interval
     Interval.new(quality, simple_value)
   end
 
-  # Returns the same interval goimg in the opposite direction
+  # Returns the same interval going in the opposite direction
   def reverse
     Interval.new(quality, -1 * value)
   end

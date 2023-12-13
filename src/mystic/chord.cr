@@ -1,4 +1,5 @@
 # Represents a chord
+#
 # A chord has a root note, intervals (indicating the intervals above the root in root position),
 # and an array of notes
 #
@@ -19,7 +20,7 @@
 # Chord.new(Note.new("C4"), [Interval.new("M2"), Interval.new("P5")])
 #
 # # Shorthand with chord symbols
-# Chord.new("CMb9#11")
+# Chord.new("Cmb9#11")
 # ```
 class Mystic::Chord
   getter root : Note
@@ -148,7 +149,8 @@ class Mystic::Chord
     notes.map(&.name)
   end
 
-  # Return the member of the chord given a specific *interval_from_root*
+  # Return the member of the chord given a specific *interval_from_root*.
+  #
   # This is a more specific version of Chord#get(member).
   # This is useful if a chord has multiple notes with the same member number.
   #
@@ -168,6 +170,7 @@ class Mystic::Chord
   end
 
   # Return the given *member*
+  #
   # For example, chord.get(3) will return the 3rd of the chord
   def get(member : Int32)
     intervals_from_root = intervals.select { |interval| interval.value == member }

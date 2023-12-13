@@ -1,7 +1,9 @@
 # Coordinate representation of pitches
 #
 # Pitches are represented by a combination of octaves and fifths away from Middle C
+#
 # For example, the C#4 is represented as (-4, 7), and Db4 is (3, -5).
+#
 # The benefit of this approach over a semitone-based system is that it is easier to
 # keep track of enharmonic notes, and it also makes interval math much simpler.
 struct Mystic::Coords
