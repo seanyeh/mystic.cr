@@ -52,7 +52,7 @@ class Mystic::Scale
   end
 
   # Returns the notes of the scale
-  def notes
+  def notes : Array(Note)
     intervals.reduce([tonic]) do |acc, interval|
       new_note = acc.last + interval
       acc.push(new_note)
@@ -60,7 +60,7 @@ class Mystic::Scale
   end
 
   # Returns the note names
-  def note_names
+  def note_names : Array(String)
     notes.map(&.name)
   end
 
@@ -69,12 +69,12 @@ class Mystic::Scale
   # For example: "C major"
   #
   # If *include_octave* is true, will include the octave as part of the tonic note (e.g. "C4 major")
-  def name(include_octave = false)
+  def name(include_octave = false) : String
     "#{include_octave ? tonic : tonic.letter} #{type}"
   end
 
   # Returns a new scale transposed by the given *interval*
-  def +(interval : Interval)
+  def +(interval : Interval) : self
     Scale.new(tonic + interval, type, intervals)
   end
 
