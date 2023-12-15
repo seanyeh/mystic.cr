@@ -30,7 +30,7 @@ module Mystic
       end
     end
 
-    describe "notes" do
+    describe "#notes" do
       it "returns the correct notes" do
         expected = [
           Note.new("C4"),
@@ -46,6 +46,22 @@ module Mystic
       end
     end
 
+    describe "#note_names" do
+      it "returns the correct note names" do
+        expected = [
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "A",
+          "B",
+        ]
+
+        c_major.note_names.should eq(expected)
+      end
+    end
+
     describe "#name" do
       it "returns the name without the octave" do
         c_major.name.should eq("C major")
@@ -53,6 +69,13 @@ module Mystic
 
       it "returns the name with the octave if specified" do
         c_major.name(include_octave: true).should eq("C4 major")
+      end
+    end
+
+    describe "#+" do
+      it "returns a new scale transposed by the given interval" do
+        scale = c_major + Interval.new("M2")
+        scale.name.should eq("D major")
       end
     end
 

@@ -59,6 +59,11 @@ class Mystic::Scale
     end
   end
 
+  # Returns the note names
+  def note_names
+    notes.map(&.name)
+  end
+
   # Returns the name of the scale
   #
   # For example: "C major"
@@ -66,6 +71,11 @@ class Mystic::Scale
   # If *include_octave* is true, will include the octave as part of the tonic note (e.g. "C4 major")
   def name(include_octave = false)
     "#{include_octave ? tonic : tonic.letter} #{type}"
+  end
+
+  # Returns a new scale transposed by the given *interval*
+  def +(interval : Interval)
+    Scale.new(tonic + interval, type, intervals)
   end
 
   def to_s
