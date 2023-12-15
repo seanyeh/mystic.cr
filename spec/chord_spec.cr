@@ -189,7 +189,7 @@ module Mystic
     end
 
     describe "#+" do
-      it "returns true if same" do
+      it "returns a new chord transposed by the given interval" do
         c = root_position_chord + Interval.new("M2")
 
         c.root.should eq(Note.new("D4"))
