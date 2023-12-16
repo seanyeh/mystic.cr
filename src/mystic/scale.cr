@@ -78,7 +78,7 @@ class Mystic::Scale
     Scale.new(tonic + interval, type, intervals)
   end
 
-  def to_s
-    name(include_octave: true)
+  def to_s(io : IO) : Nil
+    io << name(include_octave: true)
   end
 end
