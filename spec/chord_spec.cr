@@ -154,11 +154,22 @@ module Mystic
       end
     end
 
-    # describe "#name" do
-    #   it "returns the correct name" do
-    #     mystic_chord.name.should eq("C mystic")
-    #   end
-    # end
+    describe "#pitch_class_set" do
+      it "returns the correct pitch class set" do
+        expected = PitchClassSet.new([
+          PitchClass.new(0),
+          PitchClass.new(4),
+          PitchClass.new(7),
+        ])
+        root_position_chord.pitch_class_set.should eq(expected)
+      end
+    end
+
+    describe "#name" do
+      it "returns the correct name" do
+        mystic_chord.name.should eq("C mystic")
+      end
+    end
 
     describe "#note_names" do
       it "returns the correct note names" do

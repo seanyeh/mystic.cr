@@ -141,6 +141,11 @@ class Mystic::Chord
     Chord.new(root, intervals: intervals, notes: notes)
   end
 
+  # Returns the `PitchClassSet` of the notes
+  def pitch_class_set : PitchClassSet
+    PitchClassSet.new(notes.map(&.pitch_class))
+  end
+
   def name : String
     "#{root.name} #{quality}"
   end

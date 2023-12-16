@@ -122,6 +122,11 @@ class Mystic::Note
     (LETTER_PITCH_CLASSES[letter] + accidental_offset) % 12
   end
 
+  # Returns the `PitchClass`
+  def pitch_class : PitchClass
+    PitchClass.new(chroma)
+  end
+
   # Returns the midi value
   def midi : Int32
     (12 * (octave + 1)) + chroma

@@ -2,7 +2,15 @@
 
 ![CI](https://github.com/seanyeh/mystic.cr/actions/workflows/ci.yml/badge.svg)
 
-Mystic is a music theory library for Crystal, featuring methods for working with notes, intervals, scales, chords, and more.
+Mystic is a music theory library for Crystal. It provides classes and methods
+for many music applications.
+
+### Features:
+* Notes
+* Intervals
+* Scales
+* Chords
+* Set theory (pitch classes and pitch class sets)
 
 ## Installation
 
@@ -29,7 +37,7 @@ c4 = Mystic::Note.new("C") # default octave is 4
 # Intervals
 p12 = g5 - c4 # Interval of a Perfect 12th
 p5 = p12.simple # Interval of a Perfect 5th
-p4 = p5.invert # => Interval of a Perfect 4th
+p4 = p5.invert # Interval of a Perfect 4th
 
 i = Mystic::Interval.new("m-2") # Descending minor 2nd
 a4 = p5 + i # Interval of an Augmented 4th
@@ -58,6 +66,17 @@ Mystic::Chord.new("Cmb9#11").note_names
 
 Mystic::Chord.new(c4, "mystic").note_names
 # => ["C", "F#", "Bb", "E", "A", "D"]
+
+# Set Theory
+pc_set = Mystic::Chord.new("F#").pitch_class_set # PitchClassSet of [6, 10, 1]
+pc_set.prime_form
+# => PitchClassSet of [0, 3, 7]
+
+pc_set.interval_vector
+# => [0, 0, 1, 1, 1, 0]
+
+pc_set.forte_number
+# => "3-11B"
 ```
 
 ## Contributing

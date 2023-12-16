@@ -120,6 +120,12 @@ module Mystic
       end
     end
 
+    describe "#pitch_class" do
+      it "returns the correct pitch class" do
+        natural_note.pitch_class.should eq(PitchClass.new(0))
+      end
+    end
+
     describe "#midi" do
       it "returns the correct midi value" do
         natural_note.midi.should eq(60)
