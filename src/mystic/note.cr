@@ -81,7 +81,7 @@ class Mystic::Note
   end
 
   # Returns a note corresponding to a given `Coords`
-  def self.from_coords(coords : Coords)
+  def self.from_coords(coords : Coords) : self
     fifths, value = coords.fifths, coords.value
 
     letter = PITCHES[value % 7]
@@ -106,52 +106,52 @@ class Mystic::Note
   end
 
   # Returns `Coords` representation
-  def coords
+  def coords : Coords
     octave_offset = Coords.new(octave - BASE_OCTAVE, 0)
 
     base_coords = PITCH_COORDS[letter]
     base_coords + (Interval::SHARP_COORDS * accidental_offset) + octave_offset
   end
 
-  def name
+  def name : String
     "#{letter}#{accidental}"
   end
 
   # Returns the numerical pitch class (0-11)
-  def chroma
+  def chroma : Int32
     (LETTER_PITCH_CLASSES[letter] + accidental_offset) % 12
   end
 
   # Returns the midi value
-  def midi
+  def midi : Int32
     (12 * (octave + 1)) + chroma
   end
 
   # Returns the frequency in Hz
-  def frequency(tuning = 440.0)
+  def frequency(tuning = 440.0) : Float64
     tuning * Math.exp2((midi - 69) / 12)
   end
 
-  def accidental_offset
+  def accidental_offset : Int32
     Util.accidental_offset(accidental)
   end
 
-  def +(interval : Interval)
+  def +(interval : Interval) : self
     Note.from_coords(coords + interval.coords)
   end
 
-  def -(interval : Interval)
+  def -(interval : Interval) : self
     Note.from_coords(coords - interval.coords)
   end
 
-  def -(other : Note)
+  def -(other : self) : Interval
     Interval.from_coords(coords - other.coords)
   end
 
   # Note: this compares notes as ordered on a staff rather than by pitch.
   #
   # For example, a Cx4 < Db4 even though Cx4 sounds higher.
-  def <=>(other : Note)
+  def <=>(other : self)
     return octave.<=>(other.octave) if octave != other.octave
 
     return LETTER_PITCH_CLASSES[letter].<=>(LETTER_PITCH_CLASSES[other.letter]) if letter != other.letter
@@ -159,15 +159,15 @@ class Mystic::Note
     accidental_offset.<=>(other.accidental_offset)
   end
 
-  def <(other : Note)
+  def <(other : self)
     self.<=>(other) == -1
   end
 
-  def >(other : Note)
+  def >(other : self)
     self.<=>(other) == 1
   end
 
-  def ==(other : Note)
+  def ==(other : self)
     letter == other.letter && accidental == other.accidental && octave == other.octave
   end
 

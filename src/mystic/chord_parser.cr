@@ -32,13 +32,13 @@ class Mystic::ChordParser
     def initialize(@member : Int32, @accidental = "", @type = EXT)
     end
 
-    def member?
+    def member? : Bool
       type != OMIT
     end
   end
 
   # Return a standardized format for qualities for a given string quality
-  def self.normalize_basic_quality(s : String)
+  def self.normalize_basic_quality(s : String) : String
     if s.downcase.in?(["maj", "ma"])
       "M"
     elsif s.downcase.in?(["mi", "min"])
@@ -49,7 +49,7 @@ class Mystic::ChordParser
   end
 
   # Parse a string chord symbol and return the resulting `Chord`
-  def self.parse(s : String)
+  def self.parse(s : String) : Chord
     pattern = (
       "^" \
       "(?<root>#{Note::NAME_PATTERN})" \
@@ -119,7 +119,7 @@ class Mystic::ChordParser
   #
   # When *has_seventh* is true, the chord symbol has an explicit 7th,
   # so there is no need to add an implied 7th
-  def self.parse_extensions(tokens : Array(Token), has_seventh = false)
+  def self.parse_extensions(tokens : Array(Token), has_seventh = false) : Array(Interval)
     # Add implied members
     max_extension = tokens.compact_map do |token|
       next if token.type == Token::ADD || !IMPLIED_MEMBERS.has_key?(token.member.to_s)
@@ -147,7 +147,7 @@ class Mystic::ChordParser
   end
 
   # Splits the given string into tokens
-  def self.tokenize_extensions(s : String)
+  def self.tokenize_extensions(s : String) : Array(Token)
     tokens = [] of Token
 
     pattern = "^(?<prefix>add|no|omit)?(?<accidental>[#♯x𝄪]*|[b♭𝄫]+|[+-])(?<member>[245-9]|1[0-4])|^(?<sus>sus)(?<sus_member>[24]?)"
@@ -187,7 +187,7 @@ class Mystic::ChordParser
     tokens
   end
 
-  protected def self.accidentals_to_quality(member : Int32, accidental = "")
+  protected def self.accidentals_to_quality(member : Int32, accidental = "") : String
     if accidental.empty?
       accidental = DEFAULT_ACCIDENTALS.fetch(member.to_s, "")
     end

@@ -84,26 +84,26 @@ class Mystic::Chord
   end
 
   # Returns the chord quality
-  def quality
+  def quality : String
     intervals_string = intervals.map(&.to_s)
     (INTERVAL_QUALITIES[intervals_string]? || "unknown").to_s
   end
 
   # Returns the lowest note
-  def bass
+  def bass : Note
     notes.first
   end
 
   # Returns the inversion number, or 0 if in root position
-  def inversion
-    root_position.notes.index(bass)
+  def inversion : Int32
+    root_position.notes.index(bass) || -1
   end
 
   # Returns the result of inverting the chord once (upwards).
   # If *keep_root* is true, will maintain the same root note if inverted back to root position.
   # This will result in all the notes shifting down some number of octave(s).
   # Otherwise, the resulting chord will have a higher root note if inverted back to root position
-  def invert(keep_root = true)
+  def invert(keep_root = true) : self
     new_notes = notes.dup
     old_bass = new_notes.shift
 
@@ -131,21 +131,21 @@ class Mystic::Chord
   end
 
   # Returns the result of inverting the chord *num* times (upwards)
-  def invert(num : Int32, keep_root = true)
+  def invert(num : Int32, keep_root = true) : self
     num.times.reduce(self) { |chord, _| chord.invert(keep_root: keep_root) }
   end
 
   # Returns the root position of the chord
-  def root_position
+  def root_position : self
     notes = [root] + intervals.map { |interval| root + interval }
     Chord.new(root, intervals: intervals, notes: notes)
   end
 
-  def name
+  def name : String
     "#{root.name} #{quality}"
   end
 
-  def note_names
+  def note_names : Array(String)
     notes.map(&.name)
   end
 
@@ -160,7 +160,7 @@ class Mystic::Chord
   # chord = Chord.new([Note.new("C4"), Note.new("Eb4"), Note.new("E4"), Note.new("G4")])
   # chord.get(Interval.new("M3")) # => Note.new("E4")
   # ```
-  def get(interval_from_root : Interval)
+  def get(interval_from_root : Interval) : Note | Nil
     if !intervals.includes?(interval_from_root)
       raise Error.new("Interval #{interval_from_root} not in chord")
     end
@@ -172,7 +172,7 @@ class Mystic::Chord
   # Return the given *member*
   #
   # For example, chord.get(3) will return the 3rd of the chord
-  def get(member : Int32)
+  def get(member : Int32) : Note | Nil
     intervals_from_root = intervals.select { |interval| interval.value == member }
 
     raise Error.new("Chord member #{member} not in chord") if intervals_from_root.empty?
@@ -180,14 +180,14 @@ class Mystic::Chord
     get(intervals_from_root.first)
   end
 
-  def +(interval : Interval)
+  def +(interval : Interval) : self
     new_notes = notes.map { |n| n + interval }
     new_root = root + interval
 
     Chord.new(new_root, intervals: intervals, notes: new_notes)
   end
 
-  def ==(other : Chord)
+  def ==(other : self)
     root = other.root && intervals == other.intervals && notes == other.notes
   end
 end

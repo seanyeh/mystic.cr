@@ -13,19 +13,19 @@ struct Mystic::Coords
   end
 
   # Returns the pitch offset from Middle C and can be used to calculate the pitch name
-  def value
+  def value : Int32
     (7 * octaves) + (4 * fifths)
   end
 
-  def +(other : Coords)
+  def +(other : self) : self
     Coords.new(octaves + other.octaves, fifths + other.fifths)
   end
 
-  def -(other : Coords)
+  def -(other : self) : self
     self + (other * -1)
   end
 
-  def *(i : Int32)
+  def *(i : Int32) : self
     Coords.new(octaves * i, fifths * i)
   end
 
@@ -33,7 +33,7 @@ struct Mystic::Coords
     io << "[#{octaves}, #{fifths}]"
   end
 
-  def ==(other : Coords)
+  def ==(other : self)
     octaves == other.octaves && fifths == other.fifths
   end
 end

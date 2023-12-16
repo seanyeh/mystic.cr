@@ -59,7 +59,7 @@ class Mystic::Interval
     initialize(quality, value)
   end
 
-  def self.from_coords(coords : Coords)
+  def self.from_coords(coords : Coords) : self
     fifths, value = coords.fifths, coords.value
 
     # 6th fifth away begins the first altered interval (augmented 4th)
@@ -90,7 +90,7 @@ class Mystic::Interval
   end
 
   # Returns `Coords` representation
-  def coords
+  def coords : Coords
     octave_offset = Coords.new(octaves, 0)
 
     base_coords = INTERVAL_COORDS[simple.number.to_s]
@@ -98,33 +98,33 @@ class Mystic::Interval
   end
 
   # Returns the (positive) number
-  def number
+  def number : Int32
     value.abs
   end
 
   # Returns 1 if ascending and -1 if descending
-  def direction
+  def direction : Int32
     value >= 0 ? 1 : -1
   end
 
   # Returns if simple (an octave or smaller)
-  def simple?
+  def simple? : Bool
     number <= 8
   end
 
   # Returns if compound (greater than an octave)
-  def compound?
+  def compound? : Bool
     !simple?
   end
 
   # Returns number of octaves above the simple interval
   # Note: an octave is considered a simple interval
-  def octaves
+  def octaves : Int32
     (number - 2).tdiv(7)
   end
 
   # Returns the simple form
-  def simple
+  def simple : self
     return self if simple?
 
     simple_number = ((number - 1) % 7) + 1
@@ -137,13 +137,13 @@ class Mystic::Interval
   end
 
   # Returns the same interval going in the opposite direction
-  def reverse
+  def reverse : self
     Interval.new(quality, -1 * value)
   end
 
   # Returns the inversion
   # If compound, returns the inversion of the simple form
-  def invert
+  def invert : self
     new_value = 9 - simple.number
 
     new_quality =
@@ -161,7 +161,7 @@ class Mystic::Interval
   end
 
   # Returns the accidental offset based on the quality
-  def quality_offset
+  def quality_offset : Int32
     # If augmented and imperfect interval (e.g. A6),
     # raise 2 semitones above base (since we use minor as a base)
     number_perfect = Util.perfect?(simple.number)
@@ -171,44 +171,44 @@ class Mystic::Interval
   end
 
   # Returns the number of semitones the interval spans
-  def semitones
+  def semitones : Int32
     base_semitone = BASE_SEMITONES[simple.number - 1]
 
     absolute_semitones = (octaves * 12) + (base_semitone + quality_offset)
     direction * absolute_semitones
   end
 
-  def +(other : Interval)
+  def +(other : self) : self
     Interval.from_coords(coords + other.coords)
   end
 
-  def -(other : Interval)
+  def -(other : self) : self
     self + other.reverse
   end
 
   # Adding intervals to notes is defined in the Note class
-  def +(note : Note)
+  def +(note : Note) : Note
     note + self
   end
 
   # Note: this compares intervals as ordered on a staff rather than by pitch.
   # For example, an A2 < d3 even though an A2 spans more semitones
   # Also note: this compares magnitude only, so direction is not taken into account
-  def <=>(other : Interval)
+  def <=>(other : self)
     return number.<=>(other.number) if number != other.number
 
     quality_offset.<=>(other.quality_offset)
   end
 
-  def <(other : Interval)
+  def <(other : self)
     self.<=>(other) == -1
   end
 
-  def >(other : Interval)
+  def >(other : self)
     self.<=>(other) == 1
   end
 
-  def ==(other : Interval)
+  def ==(other : self)
     quality == other.quality && value == other.value
   end
 
