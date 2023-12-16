@@ -136,11 +136,11 @@ class Mystic::Note
     Util.accidental_offset(accidental)
   end
 
-  def +(interval : Interval) : self
+  def +(interval : Interval) : Note
     Note.from_coords(coords + interval.coords)
   end
 
-  def -(interval : Interval) : self
+  def -(interval : Interval) : Note
     Note.from_coords(coords - interval.coords)
   end
 
@@ -151,7 +151,7 @@ class Mystic::Note
   # Note: this compares notes as ordered on a staff rather than by pitch.
   #
   # For example, a Cx4 < Db4 even though Cx4 sounds higher.
-  def <=>(other : self)
+  def <=>(other : self) : Int32
     return octave.<=>(other.octave) if octave != other.octave
 
     return LETTER_PITCH_CLASSES[letter].<=>(LETTER_PITCH_CLASSES[other.letter]) if letter != other.letter
@@ -159,19 +159,19 @@ class Mystic::Note
     accidental_offset.<=>(other.accidental_offset)
   end
 
-  def <(other : self)
+  def <(other : self) : Bool
     self.<=>(other) == -1
   end
 
-  def >(other : self)
+  def >(other : self) : Bool
     self.<=>(other) == 1
   end
 
-  def ==(other : self)
+  def ==(other : self) : Bool
     letter == other.letter && accidental == other.accidental && octave == other.octave
   end
 
-  def to_s(io : IO)
+  def to_s(io : IO) : Nil
     io << "#{letter}#{accidental}#{octave}"
   end
 end

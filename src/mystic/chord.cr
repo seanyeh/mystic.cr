@@ -103,7 +103,7 @@ class Mystic::Chord
   # If *keep_root* is true, will maintain the same root note if inverted back to root position.
   # This will result in all the notes shifting down some number of octave(s).
   # Otherwise, the resulting chord will have a higher root note if inverted back to root position
-  def invert(keep_root = true) : self
+  def invert(keep_root = true) : Chord
     new_notes = notes.dup
     old_bass = new_notes.shift
 
@@ -131,12 +131,12 @@ class Mystic::Chord
   end
 
   # Returns the result of inverting the chord *num* times (upwards)
-  def invert(num : Int32, keep_root = true) : self
+  def invert(num : Int32, keep_root = true) : Chord
     num.times.reduce(self) { |chord, _| chord.invert(keep_root: keep_root) }
   end
 
   # Returns the root position of the chord
-  def root_position : self
+  def root_position : Chord
     notes = [root] + intervals.map { |interval| root + interval }
     Chord.new(root, intervals: intervals, notes: notes)
   end
@@ -180,14 +180,14 @@ class Mystic::Chord
     get(intervals_from_root.first)
   end
 
-  def +(interval : Interval) : self
+  def +(interval : Interval) : Chord
     new_notes = notes.map { |n| n + interval }
     new_root = root + interval
 
     Chord.new(new_root, intervals: intervals, notes: new_notes)
   end
 
-  def ==(other : self)
+  def ==(other : self) : Bool
     root = other.root && intervals == other.intervals && notes == other.notes
   end
 end

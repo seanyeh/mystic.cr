@@ -74,7 +74,7 @@ class Mystic::Scale
   end
 
   # Returns a new scale transposed by the given *interval*
-  def +(interval : Interval) : self
+  def +(interval : Interval) : Scale
     Scale.new(tonic + interval, type, intervals)
   end
 

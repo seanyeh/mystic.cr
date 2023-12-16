@@ -17,23 +17,23 @@ struct Mystic::Coords
     (7 * octaves) + (4 * fifths)
   end
 
-  def +(other : self) : self
+  def +(other : self) : Coords
     Coords.new(octaves + other.octaves, fifths + other.fifths)
   end
 
-  def -(other : self) : self
+  def -(other : self) : Coords
     self + (other * -1)
   end
 
-  def *(i : Int32) : self
+  def *(i : Int32) : Coords
     Coords.new(octaves * i, fifths * i)
   end
 
-  def to_s(io : IO)
+  def to_s(io : IO) : Nil
     io << "[#{octaves}, #{fifths}]"
   end
 
-  def ==(other : self)
+  def ==(other : self) : Bool
     octaves == other.octaves && fifths == other.fifths
   end
 end

@@ -59,7 +59,7 @@ class Mystic::Interval
     initialize(quality, value)
   end
 
-  def self.from_coords(coords : Coords) : self
+  def self.from_coords(coords : Coords) : Interval
     fifths, value = coords.fifths, coords.value
 
     # 6th fifth away begins the first altered interval (augmented 4th)
@@ -124,7 +124,7 @@ class Mystic::Interval
   end
 
   # Returns the simple form
-  def simple : self
+  def simple : Interval
     return self if simple?
 
     simple_number = ((number - 1) % 7) + 1
@@ -137,7 +137,7 @@ class Mystic::Interval
   end
 
   # Returns the same interval going in the opposite direction
-  def reverse : self
+  def reverse : Interval
     Interval.new(quality, -1 * value)
   end
 
@@ -178,11 +178,11 @@ class Mystic::Interval
     direction * absolute_semitones
   end
 
-  def +(other : self) : self
+  def +(other : self) : Interval
     Interval.from_coords(coords + other.coords)
   end
 
-  def -(other : self) : self
+  def -(other : self) : Interval
     self + other.reverse
   end
 
@@ -194,21 +194,21 @@ class Mystic::Interval
   # Note: this compares intervals as ordered on a staff rather than by pitch.
   # For example, an A2 < d3 even though an A2 spans more semitones
   # Also note: this compares magnitude only, so direction is not taken into account
-  def <=>(other : self)
+  def <=>(other : self) : Int32
     return number.<=>(other.number) if number != other.number
 
     quality_offset.<=>(other.quality_offset)
   end
 
-  def <(other : self)
+  def <(other : self) : Bool
     self.<=>(other) == -1
   end
 
-  def >(other : self)
+  def >(other : self) : Bool
     self.<=>(other) == 1
   end
 
-  def ==(other : self)
+  def ==(other : self) : Bool
     quality == other.quality && value == other.value
   end
 
