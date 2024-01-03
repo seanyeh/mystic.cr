@@ -1,4 +1,10 @@
+Documentation/DocumentationAdmonition:
+  Enabled: false
 Metrics/CyclomaticComplexity:
+  Enabled: false
+Naming/BlockParameterName:
+  Enabled: false
+Naming/BinaryOperatorParameterName:
   Enabled: false
 Style/ParenthesesAroundCondition:
   Enabled: false
