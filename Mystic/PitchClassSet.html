@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Crystal Docs 1.9.2">
+<meta name="crystal_docs.project_version" content="main">
+<meta name="crystal_docs.project_name" content="mystic">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="mystic">
+  <title>Mystic::PitchClassSet - mystic main</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill="currentColor" fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<input type="checkbox" id="sidebar-btn">
+<label for="sidebar-btn" id="sidebar-btn-label">
+  <svg class="open" xmlns="http://www.w3.org/2000/svg" height="2em" width="2em" viewBox="0 0 512 512"><title>Open Sidebar</title><path fill="currentColor" d="M80 96v64h352V96H80zm0 112v64h352v-64H80zm0 112v64h352v-64H80z"></path></svg>
+  <svg class="close" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512"><title>Close Sidebar</title><path fill="currentColor" d="m118.6 73.4-45.2 45.2L210.7 256 73.4 393.4l45.2 45.2L256 301.3l137.4 137.3 45.2-45.2L301.3 256l137.3-137.4-45.2-45.2L256 210.7Z"></path></svg>
+</label>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          mystic
+        </a>
+      </h1>
+
+      <span class="project-version">
+        main
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="mystic/Mystic" data-name="mystic">
+      <a href="../Mystic.html">Mystic</a>
+      
+        <ul>
+  
+  <li class=" " data-id="mystic/Mystic/Chord" data-name="mystic::chord">
+      <a href="../Mystic/Chord.html">Chord</a>
+      
+    </li>
+  
+  <li class="parent " data-id="mystic/Mystic/ChordParser" data-name="mystic::chordparser">
+      <a href="../Mystic/ChordParser.html">ChordParser</a>
+      
+        <ul>
+  
+  <li class=" " data-id="mystic/Mystic/ChordParser/Token" data-name="mystic::chordparser::token">
+      <a href="../Mystic/ChordParser/Token.html">Token</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="mystic/Mystic/Coords" data-name="mystic::coords">
+      <a href="../Mystic/Coords.html">Coords</a>
+      
+    </li>
+  
+  <li class=" " data-id="mystic/Mystic/Error" data-name="mystic::error">
+      <a href="../Mystic/Error.html">Error</a>
+      
+    </li>
+  
+  <li class=" " data-id="mystic/Mystic/ForteNumbers" data-name="mystic::fortenumbers">
+      <a href="../Mystic/ForteNumbers.html">ForteNumbers</a>
+      
+    </li>
+  
+  <li class=" " data-id="mystic/Mystic/Interval" data-name="mystic::interval">
+      <a href="../Mystic/Interval.html">Interval</a>
+      
+    </li>
+  
+  <li class=" " data-id="mystic/Mystic/Note" data-name="mystic::note">
+      <a href="../Mystic/Note.html">Note</a>
+      
+    </li>
+  
+  <li class=" " data-id="mystic/Mystic/PitchClass" data-name="mystic::pitchclass">
+      <a href="../Mystic/PitchClass.html">PitchClass</a>
+      
+    </li>
+  
+  <li class=" current" data-id="mystic/Mystic/PitchClassSet" data-name="mystic::pitchclassset">
+      <a href="../Mystic/PitchClassSet.html">PitchClassSet</a>
+      
+    </li>
+  
+  <li class=" " data-id="mystic/Mystic/Scale" data-name="mystic::scale">
+      <a href="../Mystic/Scale.html">Scale</a>
+      
+    </li>
+  
+  <li class=" " data-id="mystic/Mystic/Util" data-name="mystic::util">
+      <a href="../Mystic/Util.html">Util</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Mystic::<wbr>PitchClassSet
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Mystic/PitchClassSet.html">Mystic::PitchClassSet</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>Represents a pitch class set in Set Theory</p>
+<p>To create a PitchClass:</p>
+<pre><code class="language-crystal"><span class="c"># C, E, G</span>
+<span class="t">PitchClass</span>.new([<span class="t">PitchClass</span>.new(<span class="n">0</span>), <span class="t">PitchClass</span>.new(<span class="n">4</span>), <span class="t">PitchClass</span>.new(<span class="n">7</span>)])
+
+<span class="c"># Shorthand</span>
+<span class="t">PitchClass</span>.new([<span class="n">0</span>, <span class="n">4</span>, <span class="n">7</span>])
+
+<span class="c"># Can create from a chord</span>
+<span class="t">Chord</span>.new(<span class="s">&quot;C&quot;</span>).pitch_class_set</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/pitch_class_set.cr#L15" target="_blank">
+        mystic/pitch_class_set.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#from_forte_number%28s%3AString%29%3APitchClassSet-class-method" class="signature"><strong>.from_forte_number</strong>(s : String) : PitchClassSet</a>
+        
+          <div class="summary"><p>Returns the pitch class set (in prime form) given the Forte number</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new%28pitch_class_nums%3AArray%28Int32%29%29-class-method" class="signature"><strong>.new</strong>(pitch_class_nums : Array(Int32))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new%28pitch_classes%3AArray%28Mystic%3A%3APitchClass%29%29-class-method" class="signature"><strong>.new</strong>(pitch_classes : Array(Mystic::PitchClass))</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#%2B%28i%3AInt32%29%3APitchClassSet-instance-method" class="signature"><strong>#+</strong>(i : Int32) : PitchClassSet</a>
+        
+          <div class="summary"><p>Transpose (Tₙ)</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#-%28i%3AInt32%29%3APitchClassSet-instance-method" class="signature"><strong>#-</strong>(i : Int32) : PitchClassSet</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%3C%3D%3E%28other%3Aself%29%3AInt32-instance-method" class="signature"><strong>#<=></strong>(other : <span class="k">self</span>) : Int32</a>
+        
+          <div class="summary"><p>The more &quot;compact&quot; pitch class set is considered less than the other</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%3D%3D%28other%3Aself%29%3ABool-instance-method" class="signature"><strong>#==</strong>(other : <span class="k">self</span>) : Bool</a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this reference is the same as <em>other</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#first%3APitchClass-instance-method" class="signature"><strong>#first</strong> : PitchClass</a>
+        
+          <div class="summary"><p>Returns the first pitch class</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#forte_number%3AString-instance-method" class="signature"><strong>#forte_number</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#interval_vector%3AArray%28Int32%29-instance-method" class="signature"><strong>#interval_vector</strong> : Array(Int32)</a>
+        
+          <div class="summary"><p>The interval vector (also known as Interval Class Content) shows which interval classes (with quantities) exist between all pairs of notes.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#invert%28axis%3APitchClass%29%3APitchClassSet-instance-method" class="signature"><strong>#invert</strong>(axis : PitchClass) : PitchClassSet</a>
+        
+          <div class="summary"><p>Returns the inversion around the given <em>axis</em></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#invert%28axis%3AInt32%3D0%29%3APitchClassSet-instance-method" class="signature"><strong>#invert</strong>(axis : Int32 = <span class="n">0</span>) : PitchClassSet</a>
+        
+          <div class="summary"><p>Returns the inversion around the given <em>axis</em> (defaulting to 0)</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#last%3APitchClass-instance-method" class="signature"><strong>#last</strong> : PitchClass</a>
+        
+          <div class="summary"><p>Returns the last pitch class</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#normal_form%3APitchClassSet-instance-method" class="signature"><strong>#normal_form</strong> : PitchClassSet</a>
+        
+          <div class="summary"><p>Returns the normal form.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pitch_class_values%3AArray%28Int32%29-instance-method" class="signature"><strong>#pitch_class_values</strong> : Array(Int32)</a>
+        
+          <div class="summary"><p>Returns the pitch classes as an array of ints</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pitch_classes%3AArray%28PitchClass%29-instance-method" class="signature"><strong>#pitch_classes</strong> : Array(PitchClass)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#prime_form%3APitchClassSet-instance-method" class="signature"><strong>#prime_form</strong> : PitchClassSet</a>
+        
+          <div class="summary"><p>Returns the prime form.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#size%3AInt32-instance-method" class="signature"><strong>#size</strong> : Int32</a>
+        
+          <div class="summary"><p>Returns the number of pitch classes</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#sort%3APitchClassSet-instance-method" class="signature"><strong>#sort</strong> : PitchClassSet</a>
+        
+          <div class="summary"><p>Returns the pitch class set with pitch classes in ascending order</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#t%28i%3AInt32%29%3APitchClassSet-instance-method" class="signature"><strong>#t</strong>(i : Int32) : PitchClassSet</a>
+        
+          <div class="summary"><p>Transpose (Tₙ)</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#ti%28i%3AInt32%29%3APitchClassSet-instance-method" class="signature"><strong>#ti</strong>(i : Int32) : PitchClassSet</a>
+        
+          <div class="summary"><p>Inversion + Transpose (TₙI or Iₙ)</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_s%28io%3AIO%29%3ANil-instance-method" class="signature"><strong>#to_s</strong>(io : IO) : Nil</a>
+        
+          <div class="summary"><p>Appends a short String representation of this object which includes its class name and its object address.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#transpose_to%28i%3AInt32%29-instance-method" class="signature"><strong>#transpose_to</strong>(i : Int32)</a>
+        
+          <div class="summary"><p>Transpose set to begin with given pitch class value</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="from_forte_number(s:String):PitchClassSet-class-method">
+      <div class="signature">
+        
+        def self.<strong>from_forte_number</strong>(s : String) : <a href="../Mystic/PitchClassSet.html">PitchClassSet</a>
+
+        <a class="method-permalink" href="#from_forte_number%28s%3AString%29%3APitchClassSet-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the pitch class set (in prime form) given the Forte number</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/pitch_class_set.cr#L28" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(pitch_class_nums:Array(Int32))-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(pitch_class_nums : Array(Int32))
+
+        <a class="method-permalink" href="#new%28pitch_class_nums%3AArray%28Int32%29%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/pitch_class_set.cr#L22" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(pitch_classes:Array(Mystic::PitchClass))-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(pitch_classes : Array(<a href="../Mystic/PitchClass.html">Mystic::PitchClass</a>))
+
+        <a class="method-permalink" href="#new%28pitch_classes%3AArray%28Mystic%3A%3APitchClass%29%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/pitch_class_set.cr#L18" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="+(i:Int32):PitchClassSet-instance-method">
+      <div class="signature">
+        
+        def <strong>+</strong>(i : Int32) : <a href="../Mystic/PitchClassSet.html">PitchClassSet</a>
+
+        <a class="method-permalink" href="#%2B%28i%3AInt32%29%3APitchClassSet-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Transpose (Tₙ)</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/pitch_class_set.cr#L148" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="-(i:Int32):PitchClassSet-instance-method">
+      <div class="signature">
+        
+        def <strong>-</strong>(i : Int32) : <a href="../Mystic/PitchClassSet.html">PitchClassSet</a>
+
+        <a class="method-permalink" href="#-%28i%3AInt32%29%3APitchClassSet-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/pitch_class_set.cr#L152" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="&lt;=&gt;(other:self):Int32-instance-method">
+      <div class="signature">
+        
+        def <strong><=></strong>(other : <span class="k">self</span>) : Int32
+
+        <a class="method-permalink" href="#%3C%3D%3E%28other%3Aself%29%3AInt32-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The more &quot;compact&quot; pitch class set is considered less than the other</p>
+<p>&quot;Compactness&quot; is determined by:</p>
+<ol>
+<li>Smallest outer distance</li>
+<li>If tie, rightmost largest inner distances</li>
+<li>If tie, the pitch class set beginning closest to 0</li>
+</ol>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/pitch_class_set.cr#L178" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="==(other:self):Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>==</strong>(other : <span class="k">self</span>) : Bool
+
+        <a class="method-permalink" href="#%3D%3D%28other%3Aself%29%3ABool-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+            <div class="doc-inherited">
+              Description copied from class Reference
+            </div>
+          
+          <p>Returns <code>true</code> if this reference is the same as <em>other</em>. Invokes <code>same?</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/pitch_class_set.cr#L191" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="first:PitchClass-instance-method">
+      <div class="signature">
+        
+        def <strong>first</strong> : <a href="../Mystic/PitchClass.html">PitchClass</a>
+
+        <a class="method-permalink" href="#first%3APitchClass-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the first pitch class</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/pitch_class_set.cr#L118" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="forte_number:String-instance-method">
+      <div class="signature">
+        
+        def <strong>forte_number</strong> : String
+
+        <a class="method-permalink" href="#forte_number%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/pitch_class_set.cr#L107" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="interval_vector:Array(Int32)-instance-method">
+      <div class="signature">
+        
+        def <strong>interval_vector</strong> : Array(Int32)
+
+        <a class="method-permalink" href="#interval_vector%3AArray%28Int32%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The interval vector (also known as Interval Class Content) shows
+which interval classes (with quantities) exist between all pairs of notes.</p>
+<p>Returns an array of 6 ints, denoting how many of each interval class (ic) exist.</p>
+<p>For example: an interval vector of [0, 0, 2, 0, 0, 1] means the following:</p>
+<ol>
+<li>2 instances of interval class 3</li>
+<li>1 instance of interval class 6</li>
+</ol>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/pitch_class_set.cr#L89" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="invert(axis:PitchClass):PitchClassSet-instance-method">
+      <div class="signature">
+        
+        def <strong>invert</strong>(axis : <a href="../Mystic/PitchClass.html">PitchClass</a>) : <a href="../Mystic/PitchClassSet.html">PitchClassSet</a>
+
+        <a class="method-permalink" href="#invert%28axis%3APitchClass%29%3APitchClassSet-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the inversion around the given <em>axis</em></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/pitch_class_set.cr#L68" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="invert(axis:Int32=0):PitchClassSet-instance-method">
+      <div class="signature">
+        
+        def <strong>invert</strong>(axis : Int32 = <span class="n">0</span>) : <a href="../Mystic/PitchClassSet.html">PitchClassSet</a>
+
+        <a class="method-permalink" href="#invert%28axis%3AInt32%3D0%29%3APitchClassSet-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the inversion around the given <em>axis</em> (defaulting to 0)</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/pitch_class_set.cr#L77" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="last:PitchClass-instance-method">
+      <div class="signature">
+        
+        def <strong>last</strong> : <a href="../Mystic/PitchClass.html">PitchClass</a>
+
+        <a class="method-permalink" href="#last%3APitchClass-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the last pitch class</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/pitch_class_set.cr#L123" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="normal_form:PitchClassSet-instance-method">
+      <div class="signature">
+        
+        def <strong>normal_form</strong> : <a href="../Mystic/PitchClassSet.html">PitchClassSet</a>
+
+        <a class="method-permalink" href="#normal_form%3APitchClassSet-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the normal form.</p>
+<p>The normal form is the most compact form of a pitch class set</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/pitch_class_set.cr#L44" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pitch_class_values:Array(Int32)-instance-method">
+      <div class="signature">
+        
+        def <strong>pitch_class_values</strong> : Array(Int32)
+
+        <a class="method-permalink" href="#pitch_class_values%3AArray%28Int32%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the pitch classes as an array of ints</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/pitch_class_set.cr#L37" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pitch_classes:Array(PitchClass)-instance-method">
+      <div class="signature">
+        
+        def <strong>pitch_classes</strong> : Array(<a href="../Mystic/PitchClass.html">PitchClass</a>)
+
+        <a class="method-permalink" href="#pitch_classes%3AArray%28PitchClass%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/pitch_class_set.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="prime_form:PitchClassSet-instance-method">
+      <div class="signature">
+        
+        def <strong>prime_form</strong> : <a href="../Mystic/PitchClassSet.html">PitchClassSet</a>
+
+        <a class="method-permalink" href="#prime_form%3APitchClassSet-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the prime form.</p>
+<p>The prime form is calculated by:</p>
+<ol>
+<li>Finding the more compact version of either the normal form or inverted normal form</li>
+<li>Transposing it to start from 0</li>
+</ol>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/pitch_class_set.cr#L59" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="size:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>size</strong> : Int32
+
+        <a class="method-permalink" href="#size%3AInt32-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the number of pitch classes</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/pitch_class_set.cr#L113" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="sort:PitchClassSet-instance-method">
+      <div class="signature">
+        
+        def <strong>sort</strong> : <a href="../Mystic/PitchClassSet.html">PitchClassSet</a>
+
+        <a class="method-permalink" href="#sort%3APitchClassSet-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the pitch class set with pitch classes in ascending order</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/pitch_class_set.cr#L128" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="t(i:Int32):PitchClassSet-instance-method">
+      <div class="signature">
+        
+        def <strong>t</strong>(i : Int32) : <a href="../Mystic/PitchClassSet.html">PitchClassSet</a>
+
+        <a class="method-permalink" href="#t%28i%3AInt32%29%3APitchClassSet-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Transpose (Tₙ)</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/pitch_class_set.cr#L143" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="ti(i:Int32):PitchClassSet-instance-method">
+      <div class="signature">
+        
+        def <strong>ti</strong>(i : Int32) : <a href="../Mystic/PitchClassSet.html">PitchClassSet</a>
+
+        <a class="method-permalink" href="#ti%28i%3AInt32%29%3APitchClassSet-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Inversion + Transpose (TₙI or Iₙ)</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/pitch_class_set.cr#L138" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_s(io:IO):Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>to_s</strong>(io : IO) : Nil
+
+        <a class="method-permalink" href="#to_s%28io%3AIO%29%3ANil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+            <div class="doc-inherited">
+              Description copied from class Reference
+            </div>
+          
+          <p>Appends a short String representation of this object
+which includes its class name and its object address.</p>
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">Person</span>
+  <span class="k">def</span> <span class="m">initialize</span>(@name : <span class="t">String</span>, @age : <span class="t">Int32</span>)
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="t">Person</span>.new(<span class="s">&quot;John&quot;</span>, <span class="n">32</span>).to_s <span class="c"># =&gt; #&lt;Person:0x10a199f20&gt;</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/pitch_class_set.cr#L195" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="transpose_to(i:Int32)-instance-method">
+      <div class="signature">
+        
+        def <strong>transpose_to</strong>(i : Int32)
+
+        <a class="method-permalink" href="#transpose_to%28i%3AInt32%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Transpose set to begin with given pitch class value</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/pitch_class_set.cr#L133" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

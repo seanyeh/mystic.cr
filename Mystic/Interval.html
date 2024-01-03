@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Crystal Docs 1.9.2">
+<meta name="crystal_docs.project_version" content="main">
+<meta name="crystal_docs.project_name" content="mystic">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="mystic">
+  <title>Mystic::Interval - mystic main</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill="currentColor" fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<input type="checkbox" id="sidebar-btn">
+<label for="sidebar-btn" id="sidebar-btn-label">
+  <svg class="open" xmlns="http://www.w3.org/2000/svg" height="2em" width="2em" viewBox="0 0 512 512"><title>Open Sidebar</title><path fill="currentColor" d="M80 96v64h352V96H80zm0 112v64h352v-64H80zm0 112v64h352v-64H80z"></path></svg>
+  <svg class="close" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512"><title>Close Sidebar</title><path fill="currentColor" d="m118.6 73.4-45.2 45.2L210.7 256 73.4 393.4l45.2 45.2L256 301.3l137.4 137.3 45.2-45.2L301.3 256l137.3-137.4-45.2-45.2L256 210.7Z"></path></svg>
+</label>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          mystic
+        </a>
+      </h1>
+
+      <span class="project-version">
+        main
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="mystic/Mystic" data-name="mystic">
+      <a href="../Mystic.html">Mystic</a>
+      
+        <ul>
+  
+  <li class=" " data-id="mystic/Mystic/Chord" data-name="mystic::chord">
+      <a href="../Mystic/Chord.html">Chord</a>
+      
+    </li>
+  
+  <li class="parent " data-id="mystic/Mystic/ChordParser" data-name="mystic::chordparser">
+      <a href="../Mystic/ChordParser.html">ChordParser</a>
+      
+        <ul>
+  
+  <li class=" " data-id="mystic/Mystic/ChordParser/Token" data-name="mystic::chordparser::token">
+      <a href="../Mystic/ChordParser/Token.html">Token</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="mystic/Mystic/Coords" data-name="mystic::coords">
+      <a href="../Mystic/Coords.html">Coords</a>
+      
+    </li>
+  
+  <li class=" " data-id="mystic/Mystic/Error" data-name="mystic::error">
+      <a href="../Mystic/Error.html">Error</a>
+      
+    </li>
+  
+  <li class=" " data-id="mystic/Mystic/ForteNumbers" data-name="mystic::fortenumbers">
+      <a href="../Mystic/ForteNumbers.html">ForteNumbers</a>
+      
+    </li>
+  
+  <li class=" current" data-id="mystic/Mystic/Interval" data-name="mystic::interval">
+      <a href="../Mystic/Interval.html">Interval</a>
+      
+    </li>
+  
+  <li class=" " data-id="mystic/Mystic/Note" data-name="mystic::note">
+      <a href="../Mystic/Note.html">Note</a>
+      
+    </li>
+  
+  <li class=" " data-id="mystic/Mystic/PitchClass" data-name="mystic::pitchclass">
+      <a href="../Mystic/PitchClass.html">PitchClass</a>
+      
+    </li>
+  
+  <li class=" " data-id="mystic/Mystic/PitchClassSet" data-name="mystic::pitchclassset">
+      <a href="../Mystic/PitchClassSet.html">PitchClassSet</a>
+      
+    </li>
+  
+  <li class=" " data-id="mystic/Mystic/Scale" data-name="mystic::scale">
+      <a href="../Mystic/Scale.html">Scale</a>
+      
+    </li>
+  
+  <li class=" " data-id="mystic/Mystic/Util" data-name="mystic::util">
+      <a href="../Mystic/Util.html">Util</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Mystic::<wbr>Interval
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Mystic/Interval.html">Mystic::Interval</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>Represents an interval</p>
+<p>To create an Interval:</p>
+<pre><code class="language-crystal"><span class="c"># Ascending Major 3rd</span>
+<span class="t">Interval</span>.new(<span class="s">&quot;M3&quot;</span>)
+
+<span class="c"># Descending intervals have a negative value</span>
+<span class="c"># Descending Perfect 5th</span>
+<span class="t">Interval</span>.new(<span class="s">&quot;P-5&quot;</span>)</code></pre>
+<p>Available qualities are:
+M (major), m (minor), P (perfect), d (diminished), A (augmented).
+Going further is also possible, for example dd (doubly diminished) and AAA (triply augmented)</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/interval.cr#L15" target="_blank">
+        mystic/interval.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>
+      <a id="constant-summary" class="anchor" href="#constant-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+      Constant Summary
+    </h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="BASE_SEMITONES">
+        <strong>BASE_SEMITONES</strong> = <code>[<span class="n">0</span>, <span class="n">2</span>, <span class="n">3</span>, <span class="n">5</span>, <span class="n">7</span>, <span class="n">8</span>, <span class="n">10</span>]</code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="INTERVAL_COORDS">
+        <strong>INTERVAL_COORDS</strong> = <code>{<span class="s">&quot;1&quot;</span>: <span class="t">Coords</span>.new(<span class="n">0</span>, <span class="n">0</span>), <span class="s">&quot;2&quot;</span>: <span class="t">Coords</span>.new(<span class="n">3</span>, <span class="n">-5</span>), <span class="s">&quot;3&quot;</span>: <span class="t">Coords</span>.new(<span class="n">2</span>, <span class="n">-3</span>), <span class="s">&quot;4&quot;</span>: <span class="t">Coords</span>.new(<span class="n">1</span>, <span class="n">-1</span>), <span class="s">&quot;5&quot;</span>: <span class="t">Coords</span>.new(<span class="n">0</span>, <span class="n">1</span>), <span class="s">&quot;6&quot;</span>: <span class="t">Coords</span>.new(<span class="n">3</span>, <span class="n">-4</span>), <span class="s">&quot;7&quot;</span>: <span class="t">Coords</span>.new(<span class="n">2</span>, <span class="n">-2</span>), <span class="s">&quot;8&quot;</span>: <span class="t">Coords</span>.new(<span class="n">1</span>, <span class="n">0</span>)}</code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="QUALITY_SEMITONE_OFFSETS">
+        <strong>QUALITY_SEMITONE_OFFSETS</strong> = <code>{<span class="t">P</span>: <span class="n">0</span>, m: <span class="n">0</span>, <span class="t">M</span>: <span class="n">1</span>, <span class="t">A</span>: <span class="n">1</span>, d: <span class="n">-1</span>}</code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="SHARP_COORDS">
+        <strong>SHARP_COORDS</strong> = <code><span class="t">Coords</span>.new(<span class="n">-4</span>, <span class="n">7</span>)</code>
+      </dt>
+      
+    
+  </dl>
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#from_coords%28coords%3ACoords%29%3AInterval-class-method" class="signature"><strong>.from_coords</strong>(coords : Coords) : Interval</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new%28s%3AString%29-class-method" class="signature"><strong>.new</strong>(s : String)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#%2B%28other%3Aself%29%3AInterval-instance-method" class="signature"><strong>#+</strong>(other : <span class="k">self</span>) : Interval</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%2B%28note%3ANote%29%3ANote-instance-method" class="signature"><strong>#+</strong>(note : Note) : Note</a>
+        
+          <div class="summary"><p>Adding intervals to notes is defined in the Note class</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#-%28other%3Aself%29%3AInterval-instance-method" class="signature"><strong>#-</strong>(other : <span class="k">self</span>) : Interval</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%3C%28other%3Aself%29%3ABool-instance-method" class="signature"><strong>#<</strong>(other : <span class="k">self</span>) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%3C%3D%3E%28other%3Aself%29%3AInt32-instance-method" class="signature"><strong>#<=></strong>(other : <span class="k">self</span>) : Int32</a>
+        
+          <div class="summary"><p>Note: this compares intervals as ordered on a staff rather than by pitch.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%3D%3D%28other%3Aself%29%3ABool-instance-method" class="signature"><strong>#==</strong>(other : <span class="k">self</span>) : Bool</a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this reference is the same as <em>other</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%3E%28other%3Aself%29%3ABool-instance-method" class="signature"><strong>#></strong>(other : <span class="k">self</span>) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#compound%3F%3ABool-instance-method" class="signature"><strong>#compound?</strong> : Bool</a>
+        
+          <div class="summary"><p>Returns if compound (greater than an octave)</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#coords%3ACoords-instance-method" class="signature"><strong>#coords</strong> : Coords</a>
+        
+          <div class="summary"><p>Returns <code><a href="../Mystic/Coords.html">Coords</a></code> representation</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#direction%3AInt32-instance-method" class="signature"><strong>#direction</strong> : Int32</a>
+        
+          <div class="summary"><p>Returns 1 if ascending and -1 if descending</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#invert%3Aself-instance-method" class="signature"><strong>#invert</strong> : <span class="k">self</span></a>
+        
+          <div class="summary"><p>Returns the inversion If compound, returns the inversion of the simple form</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#number%3AInt32-instance-method" class="signature"><strong>#number</strong> : Int32</a>
+        
+          <div class="summary"><p>Returns the (positive) number</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#octaves%3AInt32-instance-method" class="signature"><strong>#octaves</strong> : Int32</a>
+        
+          <div class="summary"><p>Returns number of octaves above the simple interval Note: an octave is considered a simple interval</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#quality%3AString-instance-method" class="signature"><strong>#quality</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#quality_offset%3AInt32-instance-method" class="signature"><strong>#quality_offset</strong> : Int32</a>
+        
+          <div class="summary"><p>Returns the accidental offset based on the quality</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#reverse%3AInterval-instance-method" class="signature"><strong>#reverse</strong> : Interval</a>
+        
+          <div class="summary"><p>Returns the same interval going in the opposite direction</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#semitones%3AInt32-instance-method" class="signature"><strong>#semitones</strong> : Int32</a>
+        
+          <div class="summary"><p>Returns the number of semitones the interval spans</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#simple%3AInterval-instance-method" class="signature"><strong>#simple</strong> : Interval</a>
+        
+          <div class="summary"><p>Returns the simple form</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#simple%3F%3ABool-instance-method" class="signature"><strong>#simple?</strong> : Bool</a>
+        
+          <div class="summary"><p>Returns if simple (an octave or smaller)</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_s%28io%3AIO%29-instance-method" class="signature"><strong>#to_s</strong>(io : IO)</a>
+        
+          <div class="summary"><p>Appends a short String representation of this object which includes its class name and its object address.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#value%3AInt32-instance-method" class="signature"><strong>#value</strong> : Int32</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="from_coords(coords:Coords):Interval-class-method">
+      <div class="signature">
+        
+        def self.<strong>from_coords</strong>(coords : <a href="../Mystic/Coords.html">Coords</a>) : <a href="../Mystic/Interval.html">Interval</a>
+
+        <a class="method-permalink" href="#from_coords%28coords%3ACoords%29%3AInterval-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/interval.cr#L62" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(s:String)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(s : String)
+
+        <a class="method-permalink" href="#new%28s%3AString%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/interval.cr#L46" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="+(other:self):Interval-instance-method">
+      <div class="signature">
+        
+        def <strong>+</strong>(other : <span class="k">self</span>) : <a href="../Mystic/Interval.html">Interval</a>
+
+        <a class="method-permalink" href="#%2B%28other%3Aself%29%3AInterval-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/interval.cr#L181" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="+(note:Note):Note-instance-method">
+      <div class="signature">
+        
+        def <strong>+</strong>(note : <a href="../Mystic/Note.html">Note</a>) : <a href="../Mystic/Note.html">Note</a>
+
+        <a class="method-permalink" href="#%2B%28note%3ANote%29%3ANote-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Adding intervals to notes is defined in the Note class</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/interval.cr#L190" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="-(other:self):Interval-instance-method">
+      <div class="signature">
+        
+        def <strong>-</strong>(other : <span class="k">self</span>) : <a href="../Mystic/Interval.html">Interval</a>
+
+        <a class="method-permalink" href="#-%28other%3Aself%29%3AInterval-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/interval.cr#L185" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="&lt;(other:self):Bool-instance-method">
+      <div class="signature">
+        
+        def <strong><</strong>(other : <span class="k">self</span>) : Bool
+
+        <a class="method-permalink" href="#%3C%28other%3Aself%29%3ABool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/interval.cr#L203" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="&lt;=&gt;(other:self):Int32-instance-method">
+      <div class="signature">
+        
+        def <strong><=></strong>(other : <span class="k">self</span>) : Int32
+
+        <a class="method-permalink" href="#%3C%3D%3E%28other%3Aself%29%3AInt32-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Note: this compares intervals as ordered on a staff rather than by pitch.
+For example, an A2 &lt; d3 even though an A2 spans more semitones
+Also note: this compares magnitude only, so direction is not taken into account</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/interval.cr#L197" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="==(other:self):Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>==</strong>(other : <span class="k">self</span>) : Bool
+
+        <a class="method-permalink" href="#%3D%3D%28other%3Aself%29%3ABool-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+            <div class="doc-inherited">
+              Description copied from class Reference
+            </div>
+          
+          <p>Returns <code>true</code> if this reference is the same as <em>other</em>. Invokes <code>same?</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/interval.cr#L211" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="&gt;(other:self):Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>></strong>(other : <span class="k">self</span>) : Bool
+
+        <a class="method-permalink" href="#%3E%28other%3Aself%29%3ABool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/interval.cr#L207" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="compound?:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>compound?</strong> : Bool
+
+        <a class="method-permalink" href="#compound%3F%3ABool-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns if compound (greater than an octave)</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/interval.cr#L116" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="coords:Coords-instance-method">
+      <div class="signature">
+        
+        def <strong>coords</strong> : <a href="../Mystic/Coords.html">Coords</a>
+
+        <a class="method-permalink" href="#coords%3ACoords-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code><a href="../Mystic/Coords.html">Coords</a></code> representation</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/interval.cr#L93" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="direction:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>direction</strong> : Int32
+
+        <a class="method-permalink" href="#direction%3AInt32-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns 1 if ascending and -1 if descending</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/interval.cr#L106" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="invert:self-instance-method">
+      <div class="signature">
+        
+        def <strong>invert</strong> : <span class="k">self</span>
+
+        <a class="method-permalink" href="#invert%3Aself-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the inversion
+If compound, returns the inversion of the simple form</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/interval.cr#L146" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="number:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>number</strong> : Int32
+
+        <a class="method-permalink" href="#number%3AInt32-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the (positive) number</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/interval.cr#L101" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="octaves:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>octaves</strong> : Int32
+
+        <a class="method-permalink" href="#octaves%3AInt32-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns number of octaves above the simple interval
+Note: an octave is considered a simple interval</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/interval.cr#L122" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="quality:String-instance-method">
+      <div class="signature">
+        
+        def <strong>quality</strong> : String
+
+        <a class="method-permalink" href="#quality%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/interval.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="quality_offset:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>quality_offset</strong> : Int32
+
+        <a class="method-permalink" href="#quality_offset%3AInt32-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the accidental offset based on the quality</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/interval.cr#L164" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="reverse:Interval-instance-method">
+      <div class="signature">
+        
+        def <strong>reverse</strong> : <a href="../Mystic/Interval.html">Interval</a>
+
+        <a class="method-permalink" href="#reverse%3AInterval-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the same interval going in the opposite direction</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/interval.cr#L140" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="semitones:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>semitones</strong> : Int32
+
+        <a class="method-permalink" href="#semitones%3AInt32-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the number of semitones the interval spans</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/interval.cr#L174" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="simple:Interval-instance-method">
+      <div class="signature">
+        
+        def <strong>simple</strong> : <a href="../Mystic/Interval.html">Interval</a>
+
+        <a class="method-permalink" href="#simple%3AInterval-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the simple form</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/interval.cr#L127" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="simple?:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>simple?</strong> : Bool
+
+        <a class="method-permalink" href="#simple%3F%3ABool-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns if simple (an octave or smaller)</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/interval.cr#L111" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_s(io:IO)-instance-method">
+      <div class="signature">
+        
+        def <strong>to_s</strong>(io : IO)
+
+        <a class="method-permalink" href="#to_s%28io%3AIO%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+            <div class="doc-inherited">
+              Description copied from class Reference
+            </div>
+          
+          <p>Appends a short String representation of this object
+which includes its class name and its object address.</p>
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">Person</span>
+  <span class="k">def</span> <span class="m">initialize</span>(@name : <span class="t">String</span>, @age : <span class="t">Int32</span>)
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="t">Person</span>.new(<span class="s">&quot;John&quot;</span>, <span class="n">32</span>).to_s <span class="c"># =&gt; #&lt;Person:0x10a199f20&gt;</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/interval.cr#L215" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="value:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>value</strong> : Int32
+
+        <a class="method-permalink" href="#value%3AInt32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/interval.cr#L17" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

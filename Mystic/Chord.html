@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Crystal Docs 1.9.2">
+<meta name="crystal_docs.project_version" content="main">
+<meta name="crystal_docs.project_name" content="mystic">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="mystic">
+  <title>Mystic::Chord - mystic main</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill="currentColor" fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<input type="checkbox" id="sidebar-btn">
+<label for="sidebar-btn" id="sidebar-btn-label">
+  <svg class="open" xmlns="http://www.w3.org/2000/svg" height="2em" width="2em" viewBox="0 0 512 512"><title>Open Sidebar</title><path fill="currentColor" d="M80 96v64h352V96H80zm0 112v64h352v-64H80zm0 112v64h352v-64H80z"></path></svg>
+  <svg class="close" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512"><title>Close Sidebar</title><path fill="currentColor" d="m118.6 73.4-45.2 45.2L210.7 256 73.4 393.4l45.2 45.2L256 301.3l137.4 137.3 45.2-45.2L301.3 256l137.3-137.4-45.2-45.2L256 210.7Z"></path></svg>
+</label>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          mystic
+        </a>
+      </h1>
+
+      <span class="project-version">
+        main
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="mystic/Mystic" data-name="mystic">
+      <a href="../Mystic.html">Mystic</a>
+      
+        <ul>
+  
+  <li class=" current" data-id="mystic/Mystic/Chord" data-name="mystic::chord">
+      <a href="../Mystic/Chord.html">Chord</a>
+      
+    </li>
+  
+  <li class="parent " data-id="mystic/Mystic/ChordParser" data-name="mystic::chordparser">
+      <a href="../Mystic/ChordParser.html">ChordParser</a>
+      
+        <ul>
+  
+  <li class=" " data-id="mystic/Mystic/ChordParser/Token" data-name="mystic::chordparser::token">
+      <a href="../Mystic/ChordParser/Token.html">Token</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="mystic/Mystic/Coords" data-name="mystic::coords">
+      <a href="../Mystic/Coords.html">Coords</a>
+      
+    </li>
+  
+  <li class=" " data-id="mystic/Mystic/Error" data-name="mystic::error">
+      <a href="../Mystic/Error.html">Error</a>
+      
+    </li>
+  
+  <li class=" " data-id="mystic/Mystic/ForteNumbers" data-name="mystic::fortenumbers">
+      <a href="../Mystic/ForteNumbers.html">ForteNumbers</a>
+      
+    </li>
+  
+  <li class=" " data-id="mystic/Mystic/Interval" data-name="mystic::interval">
+      <a href="../Mystic/Interval.html">Interval</a>
+      
+    </li>
+  
+  <li class=" " data-id="mystic/Mystic/Note" data-name="mystic::note">
+      <a href="../Mystic/Note.html">Note</a>
+      
+    </li>
+  
+  <li class=" " data-id="mystic/Mystic/PitchClass" data-name="mystic::pitchclass">
+      <a href="../Mystic/PitchClass.html">PitchClass</a>
+      
+    </li>
+  
+  <li class=" " data-id="mystic/Mystic/PitchClassSet" data-name="mystic::pitchclassset">
+      <a href="../Mystic/PitchClassSet.html">PitchClassSet</a>
+      
+    </li>
+  
+  <li class=" " data-id="mystic/Mystic/Scale" data-name="mystic::scale">
+      <a href="../Mystic/Scale.html">Scale</a>
+      
+    </li>
+  
+  <li class=" " data-id="mystic/Mystic/Util" data-name="mystic::util">
+      <a href="../Mystic/Util.html">Util</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Mystic::<wbr>Chord
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Mystic/Chord.html">Mystic::Chord</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>Represents a chord</p>
+<p>A chord has a root note, intervals (indicating the intervals above the root in root position),
+and an array of notes</p>
+<p>Some ways to create a Chord:</p>
+<pre><code class="language-crystal"><span class="c"># Create with root note and quality</span>
+<span class="t">Chord</span>.new(<span class="t">Note</span>.new(<span class="s">&quot;C4&quot;</span>), <span class="s">&quot;major&quot;</span>)
+
+<span class="c"># Create a chord with notes. The lowest will be assumed to be the root</span>
+<span class="c"># (C major)</span>
+<span class="t">Chord</span>.new([<span class="t">Note</span>.new(<span class="s">&quot;C4&quot;</span>), <span class="t">Note</span>.new(<span class="s">&quot;E4&quot;</span>), <span class="t">Note</span>.new(<span class="s">&quot;G4&quot;</span>)])
+
+<span class="c"># Create with root note and notes</span>
+<span class="c"># (C major, 1st inversion)</span>
+<span class="t">Chord</span>.new(<span class="t">Note</span>.new(<span class="s">&quot;C4&quot;</span>), [<span class="t">Note</span>.new(<span class="s">&quot;E4&quot;</span>), <span class="t">Note</span>.new(<span class="s">&quot;G4&quot;</span>), <span class="t">Note</span>.new(<span class="s">&quot;C5&quot;</span>)])
+
+<span class="c"># Create chord with custom intervals</span>
+<span class="t">Chord</span>.new(<span class="t">Note</span>.new(<span class="s">&quot;C4&quot;</span>), [<span class="t">Interval</span>.new(<span class="s">&quot;M2&quot;</span>), <span class="t">Interval</span>.new(<span class="s">&quot;P5&quot;</span>)])
+
+<span class="c"># Shorthand with chord symbols</span>
+<span class="t">Chord</span>.new(<span class="s">&quot;Cmb9#11&quot;</span>)</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/chord.cr#L25" target="_blank">
+        mystic/chord.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>
+      <a id="constant-summary" class="anchor" href="#constant-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+      Constant Summary
+    </h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="ALIASES">
+        <strong>ALIASES</strong> = <code>{dominant: <span class="s">&quot;dominant seventh&quot;</span>, diminished: <span class="s">&quot;fully diminished&quot;</span>, <span class="s">&quot;augmented dominant seventh&quot;</span>: <span class="s">&quot;augmented seventh&quot;</span>}</code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="INTERVAL_QUALITIES">
+        <strong>INTERVAL_QUALITIES</strong> = <code><span class="t">QUALITY_INTERVALS</span>.to_h.invert</code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="QUALITY_INTERVALS">
+        <strong>QUALITY_INTERVALS</strong> = <code>{major: [<span class="s">&quot;M3&quot;</span>, <span class="s">&quot;P5&quot;</span>], minor: [<span class="s">&quot;m3&quot;</span>, <span class="s">&quot;P5&quot;</span>], diminished: [<span class="s">&quot;m3&quot;</span>, <span class="s">&quot;d5&quot;</span>], augmented: [<span class="s">&quot;M3&quot;</span>, <span class="s">&quot;A5&quot;</span>], <span class="s">&quot;major seventh&quot;</span>: [<span class="s">&quot;M3&quot;</span>, <span class="s">&quot;P5&quot;</span>, <span class="s">&quot;M7&quot;</span>], <span class="s">&quot;dominant seventh&quot;</span>: [<span class="s">&quot;M3&quot;</span>, <span class="s">&quot;P5&quot;</span>, <span class="s">&quot;m7&quot;</span>], <span class="s">&quot;minor seventh&quot;</span>: [<span class="s">&quot;m3&quot;</span>, <span class="s">&quot;P5&quot;</span>, <span class="s">&quot;m7&quot;</span>], <span class="s">&quot;minor major seventh&quot;</span>: [<span class="s">&quot;m3&quot;</span>, <span class="s">&quot;P5&quot;</span>, <span class="s">&quot;M7&quot;</span>], <span class="s">&quot;half diminished seventh&quot;</span>: [<span class="s">&quot;m3&quot;</span>, <span class="s">&quot;d5&quot;</span>, <span class="s">&quot;m7&quot;</span>], <span class="s">&quot;fully diminished seventh&quot;</span>: [<span class="s">&quot;m3&quot;</span>, <span class="s">&quot;d5&quot;</span>, <span class="s">&quot;d7&quot;</span>], <span class="s">&quot;augmented seventh&quot;</span>: [<span class="s">&quot;M3&quot;</span>, <span class="s">&quot;A5&quot;</span>, <span class="s">&quot;m7&quot;</span>], <span class="s">&quot;augmented major seventh&quot;</span>: [<span class="s">&quot;M3&quot;</span>, <span class="s">&quot;A5&quot;</span>, <span class="s">&quot;M7&quot;</span>], mystic: [<span class="s">&quot;A4&quot;</span>, <span class="s">&quot;m7&quot;</span>, <span class="s">&quot;M10&quot;</span>, <span class="s">&quot;M13&quot;</span>, <span class="s">&quot;M16&quot;</span>]}</code>
+      </dt>
+      
+    
+  </dl>
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28root%3AMystic%3A%3ANote%2Cintervals%3AArray%28Interval%29%2Cnotes%3AArray%28Note%29%7CNil%3Dnil%29-class-method" class="signature"><strong>.new</strong>(root : Mystic::Note, intervals : Array(Interval), notes : Array(Note) | Nil = <span class="n">nil</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new%28root%3AMystic%3A%3ANote%2Cnotes%3AArray%28Note%29%29-class-method" class="signature"><strong>.new</strong>(root : Mystic::Note, notes : Array(Note))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new%28root%3AMystic%3A%3ANote%2Cquality%3AString%2Cnotes%3AArray%28Note%29%7CNil%3Dnil%29-class-method" class="signature"><strong>.new</strong>(root : Mystic::Note, quality : String, notes : Array(Note) | Nil = <span class="n">nil</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new%28notes%3AArray%28Note%29%29-class-method" class="signature"><strong>.new</strong>(notes : Array(Note))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new%28s%3AString%29-class-method" class="signature"><strong>.new</strong>(s : String)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#%2B%28interval%3AInterval%29%3AChord-instance-method" class="signature"><strong>#+</strong>(interval : Interval) : Chord</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%3D%3D%28other%3Aself%29%3ABool-instance-method" class="signature"><strong>#==</strong>(other : <span class="k">self</span>) : Bool</a>
+        
+          <div class="summary"><p>Returns <code>true</code> if this reference is the same as <em>other</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#bass%3ANote-instance-method" class="signature"><strong>#bass</strong> : Note</a>
+        
+          <div class="summary"><p>Returns the lowest note</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#get%28member%3AInt32%29%3ANote%7CNil-instance-method" class="signature"><strong>#get</strong>(member : Int32) : Note | Nil</a>
+        
+          <div class="summary"><p>Return the given <em>member</em></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#get%28interval_from_root%3AInterval%29%3ANote%7CNil-instance-method" class="signature"><strong>#get</strong>(interval_from_root : Interval) : Note | Nil</a>
+        
+          <div class="summary"><p>Return the member of the chord given a specific <em>interval_from_root</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#intervals%3AArray%28Interval%29-instance-method" class="signature"><strong>#intervals</strong> : Array(Interval)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inversion%3AInt32-instance-method" class="signature"><strong>#inversion</strong> : Int32</a>
+        
+          <div class="summary"><p>Returns the inversion number, or 0 if in root position</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#invert%28num%3AInt32%2Ckeep_root%3Dtrue%29%3AChord-instance-method" class="signature"><strong>#invert</strong>(num : Int32, keep_root = <span class="n">true</span>) : Chord</a>
+        
+          <div class="summary"><p>Returns the result of inverting the chord <em>num</em> times (upwards)</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#invert%28keep_root%3Dtrue%29%3AChord-instance-method" class="signature"><strong>#invert</strong>(keep_root = <span class="n">true</span>) : Chord</a>
+        
+          <div class="summary"><p>Returns the result of inverting the chord once (upwards).</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#name%3AString-instance-method" class="signature"><strong>#name</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#note_names%3AArray%28String%29-instance-method" class="signature"><strong>#note_names</strong> : Array(String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#notes%3AArray%28Note%29-instance-method" class="signature"><strong>#notes</strong> : Array(Note)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pitch_class_set%3APitchClassSet-instance-method" class="signature"><strong>#pitch_class_set</strong> : PitchClassSet</a>
+        
+          <div class="summary"><p>Returns the <code><a href="../Mystic/PitchClassSet.html">PitchClassSet</a></code> of the notes</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#quality%3AString-instance-method" class="signature"><strong>#quality</strong> : String</a>
+        
+          <div class="summary"><p>Returns the chord quality</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#root%3ANote-instance-method" class="signature"><strong>#root</strong> : Note</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#root_position%3AChord-instance-method" class="signature"><strong>#root_position</strong> : Chord</a>
+        
+          <div class="summary"><p>Returns the root position of the chord</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(root:Mystic::Note,intervals:Array(Interval),notes:Array(Note)|Nil=nil)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(root : <a href="../Mystic/Note.html">Mystic::Note</a>, intervals : Array(<a href="../Mystic/Interval.html">Interval</a>), notes : Array(<a href="../Mystic/Note.html">Note</a>) | Nil = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#new%28root%3AMystic%3A%3ANote%2Cintervals%3AArray%28Interval%29%2Cnotes%3AArray%28Note%29%7CNil%3Dnil%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/chord.cr#L56" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(root:Mystic::Note,notes:Array(Note))-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(root : <a href="../Mystic/Note.html">Mystic::Note</a>, notes : Array(<a href="../Mystic/Note.html">Note</a>))
+
+        <a class="method-permalink" href="#new%28root%3AMystic%3A%3ANote%2Cnotes%3AArray%28Note%29%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/chord.cr#L66" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(root:Mystic::Note,quality:String,notes:Array(Note)|Nil=nil)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(root : <a href="../Mystic/Note.html">Mystic::Note</a>, quality : String, notes : Array(<a href="../Mystic/Note.html">Note</a>) | Nil = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#new%28root%3AMystic%3A%3ANote%2Cquality%3AString%2Cnotes%3AArray%28Note%29%7CNil%3Dnil%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/chord.cr#L71" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(notes:Array(Note))-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(notes : Array(<a href="../Mystic/Note.html">Note</a>))
+
+        <a class="method-permalink" href="#new%28notes%3AArray%28Note%29%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/chord.cr#L61" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(s:String)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(s : String)
+
+        <a class="method-permalink" href="#new%28s%3AString%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/chord.cr#L82" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="+(interval:Interval):Chord-instance-method">
+      <div class="signature">
+        
+        def <strong>+</strong>(interval : <a href="../Mystic/Interval.html">Interval</a>) : <a href="../Mystic/Chord.html">Chord</a>
+
+        <a class="method-permalink" href="#%2B%28interval%3AInterval%29%3AChord-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/chord.cr#L188" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="==(other:self):Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>==</strong>(other : <span class="k">self</span>) : Bool
+
+        <a class="method-permalink" href="#%3D%3D%28other%3Aself%29%3ABool-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+            <div class="doc-inherited">
+              Description copied from class Reference
+            </div>
+          
+          <p>Returns <code>true</code> if this reference is the same as <em>other</em>. Invokes <code>same?</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/chord.cr#L195" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="bass:Note-instance-method">
+      <div class="signature">
+        
+        def <strong>bass</strong> : <a href="../Mystic/Note.html">Note</a>
+
+        <a class="method-permalink" href="#bass%3ANote-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the lowest note</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/chord.cr#L93" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="get(member:Int32):Note|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>get</strong>(member : Int32) : <a href="../Mystic/Note.html">Note</a> | Nil
+
+        <a class="method-permalink" href="#get%28member%3AInt32%29%3ANote%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Return the given <em>member</em></p>
+<p>For example, chord.get(3) will return the 3rd of the chord</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/chord.cr#L180" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="get(interval_from_root:Interval):Note|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>get</strong>(interval_from_root : <a href="../Mystic/Interval.html">Interval</a>) : <a href="../Mystic/Note.html">Note</a> | Nil
+
+        <a class="method-permalink" href="#get%28interval_from_root%3AInterval%29%3ANote%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Return the member of the chord given a specific <em>interval_from_root</em>.</p>
+<p>This is a more specific version of Chord#get(member).
+This is useful if a chord has multiple notes with the same member number.</p>
+<p>For example:</p>
+<pre><code class="language-crystal"><span class="c"># Split 3rd chord (has 2 &quot;3rds&quot;)</span>
+chord <span class="o">=</span> <span class="t">Chord</span>.new([<span class="t">Note</span>.new(<span class="s">&quot;C4&quot;</span>), <span class="t">Note</span>.new(<span class="s">&quot;Eb4&quot;</span>), <span class="t">Note</span>.new(<span class="s">&quot;E4&quot;</span>), <span class="t">Note</span>.new(<span class="s">&quot;G4&quot;</span>)])
+chord.get(<span class="t">Interval</span>.new(<span class="s">&quot;M3&quot;</span>)) <span class="c"># =&gt; Note.new(&quot;E4&quot;)</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/chord.cr#L168" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="intervals:Array(Interval)-instance-method">
+      <div class="signature">
+        
+        def <strong>intervals</strong> : Array(<a href="../Mystic/Interval.html">Interval</a>)
+
+        <a class="method-permalink" href="#intervals%3AArray%28Interval%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/chord.cr#L27" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inversion:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>inversion</strong> : Int32
+
+        <a class="method-permalink" href="#inversion%3AInt32-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the inversion number, or 0 if in root position</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/chord.cr#L98" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="invert(num:Int32,keep_root=true):Chord-instance-method">
+      <div class="signature">
+        
+        def <strong>invert</strong>(num : Int32, keep_root = <span class="n">true</span>) : <a href="../Mystic/Chord.html">Chord</a>
+
+        <a class="method-permalink" href="#invert%28num%3AInt32%2Ckeep_root%3Dtrue%29%3AChord-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the result of inverting the chord <em>num</em> times (upwards)</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/chord.cr#L134" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="invert(keep_root=true):Chord-instance-method">
+      <div class="signature">
+        
+        def <strong>invert</strong>(keep_root = <span class="n">true</span>) : <a href="../Mystic/Chord.html">Chord</a>
+
+        <a class="method-permalink" href="#invert%28keep_root%3Dtrue%29%3AChord-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the result of inverting the chord once (upwards).
+If <em>keep_root</em> is true, will maintain the same root note if inverted back to root position.
+This will result in all the notes shifting down some number of octave(s).
+Otherwise, the resulting chord will have a higher root note if inverted back to root position</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/chord.cr#L106" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="name:String-instance-method">
+      <div class="signature">
+        
+        def <strong>name</strong> : String
+
+        <a class="method-permalink" href="#name%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/chord.cr#L149" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="note_names:Array(String)-instance-method">
+      <div class="signature">
+        
+        def <strong>note_names</strong> : Array(String)
+
+        <a class="method-permalink" href="#note_names%3AArray%28String%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/chord.cr#L153" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="notes:Array(Note)-instance-method">
+      <div class="signature">
+        
+        def <strong>notes</strong> : Array(<a href="../Mystic/Note.html">Note</a>)
+
+        <a class="method-permalink" href="#notes%3AArray%28Note%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/chord.cr#L28" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pitch_class_set:PitchClassSet-instance-method">
+      <div class="signature">
+        
+        def <strong>pitch_class_set</strong> : <a href="../Mystic/PitchClassSet.html">PitchClassSet</a>
+
+        <a class="method-permalink" href="#pitch_class_set%3APitchClassSet-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the <code><a href="../Mystic/PitchClassSet.html">PitchClassSet</a></code> of the notes</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/chord.cr#L145" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="quality:String-instance-method">
+      <div class="signature">
+        
+        def <strong>quality</strong> : String
+
+        <a class="method-permalink" href="#quality%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the chord quality</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/chord.cr#L87" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="root:Note-instance-method">
+      <div class="signature">
+        
+        def <strong>root</strong> : <a href="../Mystic/Note.html">Note</a>
+
+        <a class="method-permalink" href="#root%3ANote-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/chord.cr#L26" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="root_position:Chord-instance-method">
+      <div class="signature">
+        
+        def <strong>root_position</strong> : <a href="../Mystic/Chord.html">Chord</a>
+
+        <a class="method-permalink" href="#root_position%3AChord-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the root position of the chord</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/seanyeh/mystic.cr/blob/05ddf8f76dfe43de93df7b6e542ff36fbf8f4b8e/src/mystic/chord.cr#L139" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
